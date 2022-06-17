@@ -4,12 +4,44 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 10;
+    public float topspeed = 50f;
+    public float currentspeed;
+    public float accel = 1f;
+    public float factor = 0.01f;
+    private bool movingopposite;
+    private bool directioniszero;
     // Start is called before the first frame update
     void Movement(float direction)
     {
         print(direction);
-        Vector2 Motion = new Vector2(speed*direction,0);
+        currentspeed += direction * accel;
+        Vector3 Motion = new Vector3(currentspeed*factor,0,0);
+        transform.position += Motion;
+        movingopposite = ((direction == 1 && currentspeed < 0) || (direction == -1 && currentspeed > 0));
+        directioniszero = (direction == 0);
+        if (directioniszero ^ movingopposite) 
+        {
+            if(Mathf.Abs(currentspeed) <= 1)
+            {
+                currentspeed = 0;
+            }
+            else if(currentspeed > 0)
+            {
+                currentspeed -= accel*3;
+            }
+            else
+            {
+                currentspeed += accel*3;
+            }
+        }
+        if(currentspeed > topspeed)
+        {
+            currentspeed = topspeed;
+        }
+        if(currentspeed < -1*topspeed)
+        {
+            currentspeed = -1*topspeed;
+        }
         
     }
 
