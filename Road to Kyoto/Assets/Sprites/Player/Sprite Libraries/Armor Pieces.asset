@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: Armor Pieces
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Sheaths
+    m_Hash: -1905342307
+    m_CategoryList:
+    - m_Name: Unsheathed
+      m_Hash: -1103643559
+      m_Sprite: {fileID: -7704911559647255076, guid: fdf88a2af05902442a3482e44af530a9, type: 3}
+    - m_Name: Sheathed
+      m_Hash: 175472170
+      m_Sprite: {fileID: -615340996141205260, guid: 9923b9c72258b804080d44ca3c6f826d, type: 3}
