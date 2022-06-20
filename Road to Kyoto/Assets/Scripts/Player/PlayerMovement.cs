@@ -34,13 +34,17 @@ public class PlayerMovement : MonoBehaviour
                 currentspeed += accel*3;
             }
         }
-        if(currentspeed > topspeed)
+        if(currentspeed > topspeed && Input.GetAxisRaw("Run") == 1)
         {
             currentspeed = topspeed;
         }
-        if(currentspeed < -1*topspeed)
+        if(currentspeed > 0.5f*topspeed && Input.GetAxisRaw("Run") == 0)
         {
-            currentspeed = -1*topspeed;
+            currentspeed = 0.5f*topspeed;
+        }
+        if(currentspeed < -0.5f*topspeed)
+        {
+            currentspeed = -0.5f*topspeed;
         }
         
     }
