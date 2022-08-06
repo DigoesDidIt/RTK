@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float factor = 0.01f;
     private bool movingopposite;
     private bool directioniszero;
+    public Animator animator;
     // Start is called before the first frame update
     void Movement(float direction)
     {
@@ -58,5 +59,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Movement(Input.GetAxisRaw("Horizontal"));
+        animator.SetFloat("Speed",currentspeed);
     }
 }
