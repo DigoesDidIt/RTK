@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.U2D.Animation;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private bool movingopposite;
     private bool directioniszero;
     public Animator animator;
+    public SpriteResolver sheathResolver;
+    public GameObject weapon;
     // Start is called before the first frame update
     void Movement(float direction)
     {
@@ -60,5 +63,15 @@ public class PlayerMovement : MonoBehaviour
     {
         Movement(Input.GetAxisRaw("Horizontal"));
         animator.SetFloat("Speed",currentspeed);
+        if(Mathf.Abs(currentspeed) >25)
+        {
+            sheathResolver.SetCategoryAndLabel("Sheaths", "Sheathed");
+            weapon.SetActive(false);
+        }
+        else
+        {
+            sheathResolver.SetCategoryAndLabel("Sheaths", "Unsheathed");
+            weapon.SetActive(true);
+        }
     }
 }
