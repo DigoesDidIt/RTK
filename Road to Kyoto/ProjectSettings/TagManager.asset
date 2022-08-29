@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Attack
+  - Light Attack
+  - Heavy Attack
   layers:
   - Default
   - TransparentFX

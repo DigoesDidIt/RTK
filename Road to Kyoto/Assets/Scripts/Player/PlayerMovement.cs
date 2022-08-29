@@ -14,16 +14,20 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public SpriteResolver sheathResolver;
     public GameObject weapon;
+    public bool attacking;
     // Start is called before the first frame update
     void Movement(float direction)
     {
         print(direction);
-        currentspeed += direction * accel;
+        if(!attacking)
+        {
+            currentspeed += direction * accel;
+        }
         Vector3 Motion = new Vector3(currentspeed*factor,0,0);
         transform.position += Motion;
         movingopposite = ((direction == 1 && currentspeed < 0) || (direction == -1 && currentspeed > 0));
         directioniszero = (direction == 0);
-        if (directioniszero ^ movingopposite) 
+        if (directioniszero ^ movingopposite || attacking) 
         {
             if(Mathf.Abs(currentspeed) <= 1)
             {
@@ -38,11 +42,11 @@ public class PlayerMovement : MonoBehaviour
                 currentspeed += accel*3;
             }
         }
-        if(currentspeed > topspeed && Input.GetAxisRaw("Run") == 1)
+        if(currentspeed > topspeed && Input.GetAxisRaw("Run") == 1 )
         {
             currentspeed = topspeed;
         }
-        if(currentspeed > 0.5f*topspeed && Input.GetAxisRaw("Run") == 0)
+        if(currentspeed > 0.5f*topspeed && Input.GetAxisRaw("Run") == 0 )
         {
             currentspeed = 0.5f*topspeed;
         }
@@ -61,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Movement(Input.GetAxisRaw("Horizontal"));
         animator.SetFloat("Speed",currentspeed);
         if(Mathf.Abs(currentspeed) >25)
