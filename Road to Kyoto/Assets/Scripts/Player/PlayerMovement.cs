@@ -68,15 +68,5 @@ public class PlayerMovement : MonoBehaviour
         
         Movement(Input.GetAxisRaw("Horizontal"));
         animator.SetFloat("Speed",currentspeed);
-        if(Mathf.Abs(currentspeed) >25)
-        {
-            sheathResolver.SetCategoryAndLabel("Sheaths", "Sheathed");
-            weapon.SetActive(false);
-        }
-        else
-        {
-            sheathResolver.SetCategoryAndLabel("Sheaths", "Unsheathed");
-            weapon.SetActive(true);
-        }
     }
 }

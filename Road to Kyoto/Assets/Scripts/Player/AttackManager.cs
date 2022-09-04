@@ -21,6 +21,7 @@ public class AttackManager : MonoBehaviour
     void RunningSlash()
     {
         animator.SetTrigger("RunningSlash");
+        StartCoroutine(SlashDelay());
     }
 
     void Start()
@@ -40,6 +41,10 @@ public class AttackManager : MonoBehaviour
             LightAttack();
         }
         playerMovement.attacking = attacking;
+        if(playerMovement.currentspeed < 25)
+        {
+            animator.ResetTrigger("RunningSlash");
+        }
     }
 
     IEnumerator LightDelay()
@@ -47,6 +52,13 @@ public class AttackManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         playerMovement.currentspeed += 15;
         yield return new WaitForSeconds(0.5f);
+        attacking = false;
+    }
+    IEnumerator SlashDelay()
+    {
+        yield return new WaitForSeconds(.4f);
+        attacking = true;
+        yield return new WaitForSeconds(.5f);
         attacking = false;
     }
 }
