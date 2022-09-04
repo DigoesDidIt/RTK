@@ -13,12 +13,48 @@ MonoBehaviour:
   m_Name: Armor Pieces
   m_EditorClassIdentifier: 
   m_Labels:
+  - m_Name: Helmets
+    m_Hash: -344171868
+    m_CategoryList:
+    - m_Name: Worn
+      m_Hash: -2095697103
+      m_Sprite: {fileID: 6269777610801232527, guid: 9923b9c72258b804080d44ca3c6f826d, type: 3}
+    - m_Name: Sheathed
+      m_Hash: 175472170
+      m_Sprite: {fileID: -1543760811724258414, guid: 86ccb9f8b8b743b4bb07c7aaad35c7b8, type: 3}
+  - m_Name: Body - Upper
+    m_Hash: -643734333
+    m_CategoryList:
+    - m_Name: Worn
+      m_Hash: -2095697103
+      m_Sprite: {fileID: -5547170675153262469, guid: 03a5406ef353434428b5f5b4501e0741, type: 3}
+    - m_Name: Sheathed
+      m_Hash: 175472170
+      m_Sprite: {fileID: -3942535297367980085, guid: 86ccb9f8b8b743b4bb07c7aaad35c7b8, type: 3}
+  - m_Name: Body - Lower
+    m_Hash: -1184579460
+    m_CategoryList:
+    - m_Name: Worn
+      m_Hash: -2095697103
+      m_Sprite: {fileID: 1391171632956496389, guid: 03a5406ef353434428b5f5b4501e0741, type: 3}
+    - m_Name: Heavy
+      m_Hash: -1141877413
+      m_Sprite: {fileID: -4477912928574254749, guid: 86ccb9f8b8b743b4bb07c7aaad35c7b8, type: 3}
+  - m_Name: Arm
+    m_Hash: -1609353100
+    m_CategoryList:
+    - m_Name: Worn
+      m_Hash: -2095697103
+      m_Sprite: {fileID: 6447901024683591116, guid: 9923b9c72258b804080d44ca3c6f826d, type: 3}
+    - m_Name: Sheathed
+      m_Hash: 175472170
+      m_Sprite: {fileID: -7855573569862332323, guid: 86ccb9f8b8b743b4bb07c7aaad35c7b8, type: 3}
   - m_Name: Sheaths
     m_Hash: -1905342307
     m_CategoryList:
     - m_Name: Unsheathed
       m_Hash: -1103643559
-      m_Sprite: {fileID: -7704911559647255076, guid: fdf88a2af05902442a3482e44af530a9, type: 3}
+      m_Sprite: {fileID: -8041477091045932900, guid: 86ccb9f8b8b743b4bb07c7aaad35c7b8, type: 3}
     - m_Name: Sheathed
       m_Hash: 175472170
       m_Sprite: {fileID: -615340996141205260, guid: 9923b9c72258b804080d44ca3c6f826d, type: 3}
