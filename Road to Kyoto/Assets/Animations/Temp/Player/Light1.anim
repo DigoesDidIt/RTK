@@ -5373,7 +5373,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Hurtbox
+    path: WornArmor/Upper Right_4/Upper Right_6
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5383,7 +5383,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Hurtbox
+    path: WornArmor/Upper Right_4/Upper Right_6
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5393,7 +5393,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Hurtbox
+    path: WornArmor/Upper Right_4/Upper Right_6
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5616,7 +5616,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: WornArmor/Upper Right_4/Upper Right_9
+    path: WornArmor/Upper Right_4/Upper Right_5/Upper Right_12
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5626,7 +5626,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: WornArmor/Upper Right_4/Upper Right_9
+    path: WornArmor/Upper Right_4/Upper Right_5/Upper Right_12
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5636,7 +5636,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: WornArmor/Upper Right_4/Upper Right_9
+    path: WornArmor/Upper Right_4/Upper Right_5/Upper Right_12
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5676,8 +5676,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: WornArmor/Upper Right_4/Upper Right_28/Upper Right_29/Upper Right_30/Upper
-      Right_32
+    path: WornArmor/Upper Right_4/Upper Right_28
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5687,8 +5686,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: WornArmor/Upper Right_4/Upper Right_28/Upper Right_29/Upper Right_30/Upper
-      Right_32
+    path: WornArmor/Upper Right_4/Upper Right_28
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5698,8 +5696,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: WornArmor/Upper Right_4/Upper Right_28/Upper Right_29/Upper Right_30/Upper
-      Right_32
+    path: WornArmor/Upper Right_4/Upper Right_28
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5709,7 +5706,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: WornArmor/Upper Right_4/Upper Right_6
+    path: WornArmor/Upper Right_4/Upper Right_5/Upper Right_13/Upper Right_23/Upper
+      Right_24/Upper Right_25/Upper Right_26
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5719,7 +5717,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: WornArmor/Upper Right_4/Upper Right_6
+    path: WornArmor/Upper Right_4/Upper Right_5/Upper Right_13/Upper Right_23/Upper
+      Right_24/Upper Right_25/Upper Right_26
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5729,7 +5728,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: WornArmor/Upper Right_4/Upper Right_6
+    path: WornArmor/Upper Right_4/Upper Right_5/Upper Right_13/Upper Right_23/Upper
+      Right_24/Upper Right_25/Upper Right_26
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5799,7 +5799,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: WornArmor/Upper Right_4/Upper Right_28
+    path: Hurtbox
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5809,7 +5809,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: WornArmor/Upper Right_4/Upper Right_28
+    path: Hurtbox
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5819,27 +5819,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: WornArmor/Upper Right_4/Upper Right_28
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: WornArmor/Upper Right_4/Upper Right_5/Upper Right_12
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: WornArmor/Upper Right_4/Upper Right_5/Upper Right_12
+    path: Hurtbox
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5849,7 +5829,30 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: WornArmor/Upper Right_4/Upper Right_5/Upper Right_12
+    path: WornArmor/Upper Right_4/Upper Right_28/Upper Right_29/Upper Right_30/Upper
+      Right_32
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: WornArmor/Upper Right_4/Upper Right_28/Upper Right_29/Upper Right_30/Upper
+      Right_32
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: WornArmor/Upper Right_4/Upper Right_28/Upper Right_29/Upper Right_30/Upper
+      Right_32
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5892,8 +5895,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: WornArmor/Upper Right_4/Upper Right_5/Upper Right_13/Upper Right_23/Upper
-      Right_24/Upper Right_25/Upper Right_26
+    path: WornArmor/Upper Right_4/Upper Right_9
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5903,8 +5905,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: WornArmor/Upper Right_4/Upper Right_5/Upper Right_13/Upper Right_23/Upper
-      Right_24/Upper Right_25/Upper Right_26
+    path: WornArmor/Upper Right_4/Upper Right_9
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -5914,8 +5915,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: WornArmor/Upper Right_4/Upper Right_5/Upper Right_13/Upper Right_23/Upper
-      Right_24/Upper Right_25/Upper Right_26
+    path: WornArmor/Upper Right_4/Upper Right_9
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

@@ -67,6 +67,14 @@ public class PlayerMovement : MonoBehaviour
     {
         
         Movement(Input.GetAxisRaw("Horizontal"));
-        animator.SetFloat("Speed",currentspeed);
+        if(!attacking)
+        {
+            animator.SetFloat("Speed",currentspeed);
+        }
+        else
+        {
+            animator.SetFloat("Speed",0);
+        }
+        
     }
 }

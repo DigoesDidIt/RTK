@@ -8,14 +8,38 @@ public class AttackManager : MonoBehaviour
     public Animator animator;
     public GameObject hurtbox;
     private bool attacking = false;
+    public string previousAttack;
     // Start is called before the first frame update
     void LightAttack()
     {
         hurtbox.tag = "Light Attack";
-        attacking = true;
-        playerMovement.currentspeed += -15;
-        animator.SetTrigger("Light1");
-        StartCoroutine(LightDelay());
+        if(previousAttack == "None")
+        {
+            attacking = true;
+            //animator.ResetTrigger("Light2");
+            //animator.ResetTrigger("Light3");
+            playerMovement.currentspeed += -15;
+            animator.SetTrigger("Light1");
+            StartCoroutine(Light1Delay());  
+            previousAttack = "Light1";
+        }
+        else if(previousAttack == "Light1")
+        {
+            attacking = true;
+            //animator.ResetTrigger("Light1");
+            //animator.ResetTrigger("Light3");
+            animator.SetTrigger("Light2");
+            previousAttack = "Light2";
+        }
+        else if(previousAttack == "Light2")
+        {
+            attacking = true;
+            //animator.ResetTrigger("Light1");
+            //animator.ResetTrigger("Light2");
+            animator.SetTrigger("Light3");
+            previousAttack = "None";
+        }
+        StartCoroutine(StartAttackCooldown(previousAttack));
 
     }
     void RunningSlash()
@@ -26,7 +50,7 @@ public class AttackManager : MonoBehaviour
 
     void Start()
     {
-        
+        previousAttack = "None";
     }
 
     // Update is called once per frame
@@ -36,7 +60,7 @@ public class AttackManager : MonoBehaviour
         {
             RunningSlash();
         }
-        else if(Input.GetKeyDown("j") && !attacking)
+        else if(Input.GetKeyDown("j"))// && !attacking)
         {
             LightAttack();
         }
@@ -47,7 +71,7 @@ public class AttackManager : MonoBehaviour
         }
     }
 
-    IEnumerator LightDelay()
+    IEnumerator Light1Delay()
     {
         yield return new WaitForSeconds(0.2f);
         playerMovement.currentspeed += 15;
@@ -61,4 +85,17 @@ public class AttackManager : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         attacking = false;
     }
+    IEnumerator StartAttackCooldown(string pa)
+    {
+        yield return new WaitForSeconds(.7f);
+        if(previousAttack == pa)
+        {
+            previousAttack = "None";
+            attacking = false;
+            animator.ResetTrigger("Light1");
+            animator.ResetTrigger("Light2");
+            animator.ResetTrigger("Light3");
+        }
+    }
+    
 }
