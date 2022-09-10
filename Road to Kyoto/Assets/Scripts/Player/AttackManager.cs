@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +9,7 @@ public class AttackManager : MonoBehaviour
     public GameObject hurtbox;
     private bool attacking = false;
     public string previousAttack;
+    public float attackDecay;
     // Start is called before the first frame update
     void LightAttack()
     {
@@ -30,6 +31,7 @@ public class AttackManager : MonoBehaviour
             //animator.ResetTrigger("Light3");
             animator.SetTrigger("Light2");
             previousAttack = "Light2";
+
         }
         else if(previousAttack == "Light2")
         {
@@ -38,9 +40,10 @@ public class AttackManager : MonoBehaviour
             //animator.ResetTrigger("Light2");
             animator.SetTrigger("Light3");
             previousAttack = "None";
+            
         }
         StartCoroutine(StartAttackCooldown(previousAttack));
-
+        attackDecay = 0;
     }
     void RunningSlash()
     {
@@ -51,6 +54,7 @@ public class AttackManager : MonoBehaviour
     void Start()
     {
         previousAttack = "None";
+        attackDecay = 1;
     }
 
     // Update is called once per frame
@@ -68,6 +72,10 @@ public class AttackManager : MonoBehaviour
         if(playerMovement.currentspeed < 25)
         {
             animator.ResetTrigger("RunningSlash");
+        }
+        if(attackDecay < 1)
+        {
+            attackDecay +=.025f;
         }
     }
 
