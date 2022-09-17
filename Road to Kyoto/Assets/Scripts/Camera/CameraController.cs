@@ -33,6 +33,6 @@ public class CameraController : MonoBehaviour
             offset -= .002f;
         }
         transform.position = new Vector3(player.transform.position.x - (offset*3), player.transform.position.y + 3, player.transform.position.z - 10 - Mathf.Abs(offset));
-        print("offset = " + offset +". direction is "+ direction + ". Target is " + targetOffset);
+        //print("offset = " + offset +". direction is "+ direction + ". Target is " + targetOffset);
     }
 }

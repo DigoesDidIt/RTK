@@ -37,10 +37,9 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Player\AttackManager.cs" />
+     <Compile Include="Assets\Scripts\Dummy\DummyController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-     <Compile Include="Assets\HitDetection.cs" />
-     <Compile Include="Assets\DummyController.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
