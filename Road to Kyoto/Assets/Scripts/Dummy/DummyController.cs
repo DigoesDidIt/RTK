@@ -35,7 +35,7 @@ public class DummyController : MonoBehaviour
         {
             health -= attackManager.attackDecay;
             Invul = true;
-            animator.SetTrigger("Hit");
+            animator.SetTrigger("HeavyHit");
         } 
         
         StartCoroutine(InvulFrames());

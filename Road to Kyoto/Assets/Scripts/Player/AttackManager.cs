@@ -45,8 +45,17 @@ public class AttackManager : MonoBehaviour
         StartCoroutine(StartAttackCooldown(previousAttack));
         attackDecay = 0;
     }
+    void HeavyAttack()
+    {
+        hurtbox.tag = "Heavy Attack";
+        animator.SetTrigger("Heavy");
+        attackDecay = 0;
+        attacking = true;
+        StartCoroutine(HeavyDelay());
+    }
     void RunningSlash()
     {
+        hurtbox.tag = "Heavy Attack";
         animator.SetTrigger("RunningSlash");
         StartCoroutine(SlashDelay());
     }
@@ -60,7 +69,7 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("j") && !attacking && playerMovement.currentspeed > 25)
+        if((Input.GetKeyDown("j") || Input.GetKeyDown("k"))  && !attacking && playerMovement.currentspeed > 25)
         {
             RunningSlash();
         }
@@ -68,8 +77,11 @@ public class AttackManager : MonoBehaviour
         {
             LightAttack();
         }
-        playerMovement.attacking = attacking;
-        if(playerMovement.currentspeed < 25)
+        if(Input.GetKeyDown("k"))
+        {
+            HeavyAttack();
+        }
+        else if(playerMovement.currentspeed < 25)
         {
             animator.ResetTrigger("RunningSlash");
         }
@@ -77,6 +89,7 @@ public class AttackManager : MonoBehaviour
         {
             attackDecay +=.025f;
         }
+        playerMovement.attacking = attacking;
     }
 
     IEnumerator Light1Delay()
@@ -104,6 +117,11 @@ public class AttackManager : MonoBehaviour
             animator.ResetTrigger("Light2");
             animator.ResetTrigger("Light3");
         }
+    }
+    IEnumerator HeavyDelay()
+    {
+        yield return new WaitForSeconds(0.8f);
+        attacking = false;
     }
     
 }
