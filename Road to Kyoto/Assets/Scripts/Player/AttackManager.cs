@@ -10,6 +10,7 @@ public class AttackManager : MonoBehaviour
     private bool attacking = false;
     public string previousAttack;
     public float attackDecay;
+    public bool IsBlocking;
     // Start is called before the first frame update
     void LightAttack()
     {
@@ -52,6 +53,7 @@ public class AttackManager : MonoBehaviour
         attackDecay = 0;
         attacking = true;
         StartCoroutine(HeavyDelay());
+        StartCoroutine(StartAttackCooldown(previousAttack));
     }
     void RunningSlash()
     {
@@ -89,7 +91,17 @@ public class AttackManager : MonoBehaviour
         {
             attackDecay +=.025f;
         }
-        playerMovement.attacking = attacking;
+        playerMovement.attacking = (attacking || IsBlocking);
+        if(Input.GetKey("l"))
+        {
+            IsBlocking = true;
+            print("Blocking");
+        }
+        else
+        {
+            IsBlocking = false;
+        }
+        animator.SetBool("IsBlocking", IsBlocking);
     }
 
     IEnumerator Light1Delay()
@@ -116,6 +128,7 @@ public class AttackManager : MonoBehaviour
             animator.ResetTrigger("Light1");
             animator.ResetTrigger("Light2");
             animator.ResetTrigger("Light3");
+            animator.ResetTrigger("Heavy");
         }
     }
     IEnumerator HeavyDelay()
