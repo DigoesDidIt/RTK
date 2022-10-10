@@ -15,11 +15,12 @@ public class PlayerMovement : MonoBehaviour
     public SpriteResolver sheathResolver;
     public GameObject weapon;
     public bool attacking;
+    public bool canMove = true;
     // Start is called before the first frame update
     void Movement(float direction)
     {
         print(direction);
-        if(!attacking)
+        if(!attacking && canMove)
         {
             currentspeed += direction * accel;
         }
@@ -27,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position += Motion;
         movingopposite = ((direction == 1 && currentspeed < 0) || (direction == -1 && currentspeed > 0));
         directioniszero = (direction == 0);
-        if (directioniszero ^ movingopposite || attacking) 
+        if (directioniszero ^ movingopposite || attacking || !canMove) 
         {
             if(Mathf.Abs(currentspeed) <= 1)
             {
@@ -67,13 +68,17 @@ public class PlayerMovement : MonoBehaviour
     {
         
         Movement(Input.GetAxisRaw("Horizontal"));
-        if(!attacking)
+        if(!attacking && canMove)
         {
             animator.SetFloat("Speed",currentspeed);
         }
         else
         {
             animator.SetFloat("Speed",0);
+        }
+        if(!canMove)
+        {
+            currentspeed = 0;
         }
         
     }
