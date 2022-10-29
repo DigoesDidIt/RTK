@@ -40,10 +40,20 @@ public class DoorController : MonoBehaviour
             particleSystem.Play();
         }
     }
-        IEnumerator DoorDelay()
+    private void OnTriggerEnter(Collider2D trigger)
+    {
+        if(trigger.gameObject.tag == "Light Attack" || trigger.gameObject.tag == "Light Attack")
         {
-            playerMovement.canMove = false;
-            yield return new WaitForSeconds(.2f);
-            playerMovement.canMove = true;
+            collider.offset = new Vector2(1.36f, 1f);
+            collider.size = new Vector2(0.25f, 1f);
+            isOpen = true;
+            particleSystem.Play();
         }
+    }
+    IEnumerator DoorDelay()
+    {
+        playerMovement.canMove = false;
+        yield return new WaitForSeconds(.2f);
+        playerMovement.canMove = true;
+    }
 }
