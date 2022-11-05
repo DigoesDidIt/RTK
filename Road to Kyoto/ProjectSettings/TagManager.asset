@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Light Attack
   - Heavy Attack
+  - Foreground
   layers:
   - Default
   - TransparentFX

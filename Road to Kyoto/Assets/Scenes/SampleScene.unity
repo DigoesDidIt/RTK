@@ -941,9 +941,10 @@ GameObject:
   m_Component:
   - component: {fileID: 525759091}
   - component: {fileID: 525759092}
+  - component: {fileID: 525759093}
   m_Layer: 0
   m_Name: OutsideView
-  m_TagString: Untagged
+  m_TagString: Foreground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -980,6 +981,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalLight: {fileID: 1646887859}
+--- !u!54 &525759093
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525759090}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &597419246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3342868805031266839, guid: 03a5406ef353434428b5f5b4501e0741, type: 3}
@@ -3771,7 +3788,6 @@ GameObject:
   - component: {fileID: 740144023}
   - component: {fileID: 740144026}
   - component: {fileID: 740144025}
-  - component: {fileID: 740144024}
   m_Layer: 0
   m_Name: OutsideWall1
   m_TagString: Untagged
@@ -3793,19 +3809,6 @@ Transform:
   m_Father: {fileID: 525759091}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &740144024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740144022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95fedf6a14ee90f45816767e8d991e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outsideView: {fileID: 0}
 --- !u!61 &740144025
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3871,7 +3874,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: 14
   m_Sprite: {fileID: 21300000, guid: b4400241346303e4a8650552a14c4628, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4898,7 +4901,7 @@ GameObject:
   - component: {fileID: 1101433934}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Foreground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4947,7 +4950,6 @@ GameObject:
   - component: {fileID: 1181755090}
   - component: {fileID: 1181755093}
   - component: {fileID: 1181755092}
-  - component: {fileID: 1181755091}
   m_Layer: 0
   m_Name: OutsideWall1 (1)
   m_TagString: Untagged
@@ -4969,19 +4971,6 @@ Transform:
   m_Father: {fileID: 525759091}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1181755091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181755089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95fedf6a14ee90f45816767e8d991e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outsideView: {fileID: 0}
 --- !u!61 &1181755092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5047,7 +5036,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: 14
   m_Sprite: {fileID: 21300000, guid: b4400241346303e4a8650552a14c4628, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5070,7 +5059,6 @@ GameObject:
   - component: {fileID: 1190245015}
   - component: {fileID: 1190245018}
   - component: {fileID: 1190245017}
-  - component: {fileID: 1190245016}
   m_Layer: 0
   m_Name: OutsideWall1 (2)
   m_TagString: Untagged
@@ -5092,19 +5080,6 @@ Transform:
   m_Father: {fileID: 525759091}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1190245016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190245014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95fedf6a14ee90f45816767e8d991e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outsideView: {fileID: 0}
 --- !u!61 &1190245017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5170,7 +5145,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: 14
   m_Sprite: {fileID: 21300000, guid: b4400241346303e4a8650552a14c4628, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5408,6 +5383,7 @@ GameObject:
   - component: {fileID: 1487687799}
   - component: {fileID: 1487687800}
   - component: {fileID: 1487687801}
+  - component: {fileID: 1487687802}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5518,7 +5494,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1487687799
 MonoBehaviour:
@@ -5578,6 +5554,18 @@ MonoBehaviour:
   previousAttack: 
   attackDecay: 0
   IsBlocking: 0
+--- !u!114 &1487687802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487687794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9866446a9650e149a4d68d32d73d1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1617632088 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5521546271674242677, guid: 03a5406ef353434428b5f5b4501e0741, type: 3}
@@ -5725,7 +5713,6 @@ GameObject:
   - component: {fileID: 1747658171}
   - component: {fileID: 1747658174}
   - component: {fileID: 1747658173}
-  - component: {fileID: 1747658172}
   m_Layer: 0
   m_Name: OutsideWall1 (3)
   m_TagString: Untagged
@@ -5747,19 +5734,6 @@ Transform:
   m_Father: {fileID: 525759091}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1747658172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747658170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95fedf6a14ee90f45816767e8d991e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outsideView: {fileID: 0}
 --- !u!61 &1747658173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5825,7 +5799,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: 14
   m_Sprite: {fileID: 21300000, guid: b4400241346303e4a8650552a14c4628, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5880,7 +5854,6 @@ GameObject:
   - component: {fileID: 1805514903}
   - component: {fileID: 1805514906}
   - component: {fileID: 1805514905}
-  - component: {fileID: 1805514904}
   m_Layer: 0
   m_Name: OutsideWall1 (4)
   m_TagString: Untagged
@@ -5902,19 +5875,6 @@ Transform:
   m_Father: {fileID: 525759091}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1805514904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805514902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95fedf6a14ee90f45816767e8d991e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outsideView: {fileID: 0}
 --- !u!61 &1805514905
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5980,7 +5940,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: 14
   m_Sprite: {fileID: 21300000, guid: b4400241346303e4a8650552a14c4628, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

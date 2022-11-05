@@ -40,9 +40,9 @@
      <Compile Include="Assets\Scripts\Enviroment\Door\DoorController.cs" />
      <Compile Include="Assets\Scripts\Dummy\DummyController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Enviroment\OutsideLayerManager.cs" />
-     <Compile Include="Assets\Scripts\Enviroment\OutsideWallManager.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+     <Compile Include="Assets\ForegroundManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

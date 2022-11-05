@@ -40,7 +40,7 @@ public class DoorController : MonoBehaviour
             particleSystem.Play();
         }
     }
-    private void OnTriggerEnter(Collider2D trigger)
+    private void onTriggerEnter2D(Collider2D trigger)
     {
         if(trigger.gameObject.tag == "Light Attack" || trigger.gameObject.tag == "Light Attack")
         {

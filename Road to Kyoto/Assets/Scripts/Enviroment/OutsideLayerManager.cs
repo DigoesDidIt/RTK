@@ -17,15 +17,15 @@ public class OutsideLayerManager : MonoBehaviour
     {
         
     }
-    public void IsPLayerInside(bool isInside)
+    void onTriggerEnter2D(Collider2D collider)
     {
-        if(isInside)
+        print("outside " + collider.tag);
+        if(collider.tag == "Player")
         {
             foreach (Transform child in transform)
             {
                 child.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             }
-            //gameObject.GetComponent<SpriteRenderer>().enabled = false;
             globalLight.intensity = .4f;
 
         }
