@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject weapon;
     public bool attacking;
     public bool canMove = true;
+    private bool canDodge = true;
     // Start is called before the first frame update
     void Movement(float direction)
     {
@@ -80,6 +81,22 @@ public class PlayerMovement : MonoBehaviour
         {
             currentspeed = 0;
         }
+        if(Input.GetKeyDown("space") && canDodge)
+        {
+            animator.SetTrigger("Dodge");
+            Vector3 Dodge = new Vector3(-120, 10, 0);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(Dodge);
+            canDodge = false;
+            canMove = false;
+            StartCoroutine(DodgeDelay());
+
+        }
         
+    }
+    IEnumerator DodgeDelay()
+    {
+        yield return new WaitForSeconds(0.35f);
+        canDodge = true;
+        canMove = true;
     }
 }
