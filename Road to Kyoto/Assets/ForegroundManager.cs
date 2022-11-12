@@ -13,22 +13,6 @@ public class ForegroundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-    void onCollisionEnter2D(Collider2D collider)
-    {
-        if(collider.tag == "Foreground")
-        {
-            
-        }
-        print(collider.name);
-    }
-    void onTriggerEnter2D(Collider2D collider)
-    {
-        if(collider.tag == "Foreground")
-        {
-            
-        }
-        print(collider.name);
+        
     }
 }

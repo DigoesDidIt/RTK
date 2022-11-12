@@ -39,7 +39,7 @@ public class DummyController : MonoBehaviour
         } 
         
         StartCoroutine(InvulFrames());
-        print(hurtbox.gameObject.tag);
+        print("dummy" + hurtbox.gameObject.tag);
     }
     IEnumerator InvulFrames()
     {

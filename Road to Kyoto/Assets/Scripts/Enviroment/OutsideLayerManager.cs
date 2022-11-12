@@ -9,18 +9,26 @@ public class OutsideLayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    void onTriggerEnter2D(Collider2D collider)
+    void FixedUpdate()
     {
-        print("outside " + collider.tag);
-        if(collider.tag == "Player")
+        foreach (Transform child in transform)
+        {
+            child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        globalLight.intensity = .8f;
+    }
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        print("outside " + collider.gameObject.tag);
+        if (collider.gameObject.tag == "Player")
         {
             foreach (Transform child in transform)
             {
@@ -35,8 +43,8 @@ public class OutsideLayerManager : MonoBehaviour
             {
                 child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             }
-            globalLight.intensity = 1;
+            globalLight.intensity = .8f;
         }
     }
-    
+
 }
