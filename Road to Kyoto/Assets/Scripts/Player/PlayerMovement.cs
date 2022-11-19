@@ -84,7 +84,15 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown("space") && canDodge)
         {
             animator.SetTrigger("Dodge");
-            Vector3 Dodge = new Vector3(-120, 10, 0);
+            Vector3 Dodge;
+            if(Input.GetAxisRaw("Horizontal") != 0)
+            {
+                Dodge = new Vector3(Input.GetAxisRaw("Horizontal")*120, 10, 0);
+            }
+            else
+            {
+                Dodge = new Vector3(-120, 10, 0);
+            }
             gameObject.GetComponent<Rigidbody2D>().AddForce(Dodge);
             canDodge = false;
             canMove = false;

@@ -766,6 +766,7 @@ MonoBehaviour:
   targetOffset: 0
   player: {fileID: 1487687794}
   direction: 0
+  goalZOffset: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -981,6 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalLight: {fileID: 1646887859}
+  isInside: 0
 --- !u!50 &525759093
 Rigidbody2D:
   serializedVersion: 4
@@ -1000,7 +1002,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 3
 --- !u!1 &597419246 stripped
 GameObject:

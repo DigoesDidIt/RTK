@@ -6,10 +6,15 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class OutsideLayerManager : MonoBehaviour
 {
     public Light2D globalLight;
+    public bool isInside = false;
     // Start is called before the first frame update
     void Start()
     {
-
+        foreach (Transform child in transform)
+        {
+            child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        globalLight.intensity = .8f;
     }
 
     // Update is called once per frame
@@ -19,11 +24,7 @@ public class OutsideLayerManager : MonoBehaviour
     }
     void FixedUpdate()
     {
-        foreach (Transform child in transform)
-        {
-            child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        }
-        globalLight.intensity = .8f;
+       isInside = false;
     }
     void OnTriggerStay2D(Collider2D collider)
     {
@@ -35,16 +36,25 @@ public class OutsideLayerManager : MonoBehaviour
                 child.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             }
             globalLight.intensity = .4f;
+            isInside = true;
+            collider.gameObject.transform.GetChild(0).GetComponent<CameraController>().goalZOffset = 1.5f;
 
         }
-        else
+    }
+    void OnTriggerExit2D(Collider2D collider) 
+    {
+        
+        if(!isInside && collider.gameObject.tag == "Player")
         {
             foreach (Transform child in transform)
             {
                 child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             }
-            globalLight.intensity = .8f;
+        globalLight.intensity = .8f;
+        collider.gameObject.transform.GetChild(0).GetComponent<CameraController>().goalZOffset = 0;
         }
+        
+        
     }
 
 }
