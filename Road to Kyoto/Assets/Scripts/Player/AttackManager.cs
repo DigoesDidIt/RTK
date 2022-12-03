@@ -5,46 +5,50 @@ using UnityEngine;
 public class AttackManager : MonoBehaviour
 {
     public PlayerMovement playerMovement;
+    public StaminaManager staminaManager;
     public Animator animator;
     public GameObject hurtbox;
     private bool attacking = false;
     public string previousAttack;
     public float attackDecay;
     public bool IsBlocking;
+    
     // Start is called before the first frame update
     void LightAttack()
     {
-        hurtbox.tag = "Light Attack";
-        if(previousAttack == "None")
-        {
-            attacking = true;
-            //animator.ResetTrigger("Light2");
-            //animator.ResetTrigger("Light3");
-            playerMovement.currentspeed += -15;
-            animator.SetTrigger("Light1");
-            StartCoroutine(Light1Delay());  
-            previousAttack = "Light1";
-        }
-        else if(previousAttack == "Light1")
-        {
-            attacking = true;
-            //animator.ResetTrigger("Light1");
-            //animator.ResetTrigger("Light3");
-            animator.SetTrigger("Light2");
-            previousAttack = "Light2";
+        if(staminaManager.stamina > 0)
+            staminaManager.UseStamina(1.5f);
+            hurtbox.tag = "Light Attack";
+            if(previousAttack == "None")
+            {
+                attacking = true;
+                //animator.ResetTrigger("Light2");
+                //animator.ResetTrigger("Light3");
+                playerMovement.currentspeed += -15;
+                animator.SetTrigger("Light1");
+                StartCoroutine(Light1Delay());  
+                previousAttack = "Light1";
+            }
+            else if(previousAttack == "Light1")
+            {
+                attacking = true;
+                //animator.ResetTrigger("Light1");
+                //animator.ResetTrigger("Light3");
+                animator.SetTrigger("Light2");
+                previousAttack = "Light2";
 
-        }
-        else if(previousAttack == "Light2")
-        {
-            attacking = true;
-            //animator.ResetTrigger("Light1");
-            //animator.ResetTrigger("Light2");
-            animator.SetTrigger("Light3");
-            previousAttack = "None";
-            
-        }
-        StartCoroutine(StartAttackCooldown(previousAttack));
-        attackDecay = 0;
+            }
+            else if(previousAttack == "Light2")
+            {
+                attacking = true;
+                //animator.ResetTrigger("Light1");
+                //animator.ResetTrigger("Light2");
+                animator.SetTrigger("Light3");
+                previousAttack = "None";
+                
+            }
+            StartCoroutine(StartAttackCooldown(previousAttack));
+            attackDecay = 0;
     }
     void HeavyAttack()
     {
