@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StaminaManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class StaminaManager : MonoBehaviour
     public bool canRegenTiredStamina;
     public bool isRegeningTiredStamina;
     public bool canRegenStamina;
+    public Slider staminaslider;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,16 +39,26 @@ public class StaminaManager : MonoBehaviour
         if(canRegenTiredStamina)
         {
             visualStamina += 0.05f;
-            print("hello");
             if(visualStamina >= 10)
             {
                 stamina = 10;
                 visualStamina = 10;
                 isRegeningTiredStamina = false;
                 canRegenTiredStamina = false;
-                print("awesome");
             }
         }
+        ColorBlock cb = staminaslider.colors;
+        if(visualStamina==stamina)
+        {
+            cb.disabledColor = new Color(255,255,255,1); 
+        }
+        else
+        {
+            cb.disabledColor = new Color(0,0,0,1);
+        }
+        staminaslider.colors = cb;
+        staminaslider.value = visualStamina;
+
     }
     public bool UseStamina(float staminaLoss)
     {
