@@ -11,17 +11,22 @@ public class StaminaManager : MonoBehaviour
     public bool isRegeningTiredStamina;
     public bool canRegenStamina;
     public Slider staminaslider;
+    private ColorBlock cb;
     // Start is called before the first frame update
     void Start()
     {
         stamina = 10;
         canRegenTiredStamina = false;
         canRegenStamina = true;
+        cb = staminaslider.colors;
+        cb.disabledColor = new Color(1f, 102f/255f, 102f/255f, 1);
+        staminaslider.colors = cb;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         stamina = Mathf.Max(stamina, 0);
         if(stamina != 0)
         {
@@ -35,6 +40,8 @@ public class StaminaManager : MonoBehaviour
         else if(!isRegeningTiredStamina)
         {
             StartCoroutine(TiredDelay());
+            cb.disabledColor = new Color(92f/255f, 87f/255f, 87f/255f, .4f);
+            staminaslider.colors = cb;
         }
         if(canRegenTiredStamina)
         {
@@ -43,21 +50,15 @@ public class StaminaManager : MonoBehaviour
             {
                 stamina = 10;
                 visualStamina = 10;
+                cb.disabledColor = new Color(255f/255f, 102f/255f, 102f/255f, 1);
+                staminaslider.colors = cb;
                 isRegeningTiredStamina = false;
                 canRegenTiredStamina = false;
             }
+
         }
-        ColorBlock cb = staminaslider.colors;
-        if(visualStamina==stamina)
-        {
-            cb.disabledColor = new Color(255,255,255,1); 
-        }
-        else
-        {
-            cb.disabledColor = new Color(0,0,0,1);
-        }
-        staminaslider.colors = cb;
         staminaslider.value = visualStamina;
+
 
     }
     public bool UseStamina(float staminaLoss)

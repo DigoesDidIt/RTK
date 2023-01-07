@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public bool attacking;
     public bool canMove = true;
     private bool canDodge = true;
+    public StaminaManager staminaManager;
     // Start is called before the first frame update
     void Movement(float direction)
     {
@@ -44,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
                 currentspeed += accel*3;
             }
         }
-        if(currentspeed > topspeed && Input.GetAxisRaw("Run") == 1 )
+        if(currentspeed > topspeed && Input.GetAxisRaw("Run") == 1 && staminaManager.UseStamina(.0075f))
         {
             currentspeed = topspeed;
         }
@@ -81,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         {
             currentspeed = 0;
         }
-        if(Input.GetKeyDown("space") && canDodge)
+        if(Input.GetKeyDown("space") && canDodge && staminaManager.UseStamina(1f))
         {
             animator.SetTrigger("Dodge");
             Vector3 Dodge;

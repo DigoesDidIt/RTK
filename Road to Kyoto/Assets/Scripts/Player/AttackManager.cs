@@ -53,18 +53,24 @@ public class AttackManager : MonoBehaviour
     }
     void HeavyAttack()
     {
-        hurtbox.tag = "Heavy Attack";
-        animator.SetTrigger("Heavy");
-        attackDecay = 0;
-        attacking = true;
-        StartCoroutine(HeavyDelay());
-        StartCoroutine(StartAttackCooldown(previousAttack));
+        if (staminaManager.UseStamina(2f))
+        {
+            hurtbox.tag = "Heavy Attack";
+            animator.SetTrigger("Heavy");
+            attackDecay = 0;
+            attacking = true;
+            StartCoroutine(HeavyDelay());
+            StartCoroutine(StartAttackCooldown(previousAttack));
+        }
     }
     void RunningSlash()
     {
-        hurtbox.tag = "Heavy Attack";
-        animator.SetTrigger("RunningSlash");
-        StartCoroutine(SlashDelay());
+        if (staminaManager.UseStamina(1.5f))
+        {
+            hurtbox.tag = "Heavy Attack";
+            animator.SetTrigger("RunningSlash");
+            StartCoroutine(SlashDelay());
+        }
     }
 
     void Start()

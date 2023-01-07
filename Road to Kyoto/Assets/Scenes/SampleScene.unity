@@ -5615,7 +5615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92a0d2c4bfdd9e4295d62587d27be5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topspeed: 50
+  topspeed: 75
   currentspeed: 0
   accel: 0.2
   factor: 0.0005
@@ -5624,6 +5624,7 @@ MonoBehaviour:
   weapon: {fileID: 1617632088}
   attacking: 0
   canMove: 1
+  staminaManager: {fileID: 1487687803}
 --- !u!95 &1487687800
 Animator:
   serializedVersion: 3
