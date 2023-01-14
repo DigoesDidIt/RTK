@@ -30,7 +30,18 @@ public class StaminaManager : MonoBehaviour
         stamina = Mathf.Max(stamina, 0);
         if(stamina != 0)
         {
-            visualStamina = stamina;
+            if(stamina < visualStamina)
+            {
+            visualStamina -= 0.08f;
+            }
+            if(stamina > visualStamina)
+            {
+            visualStamina += 0.08f;
+            }
+            if(Mathf.Abs(stamina-visualStamina) <=.05)
+            {
+                visualStamina = stamina;
+            }
             if (canRegenStamina && stamina <= 10)
             {
                 stamina += 0.05f;
@@ -39,9 +50,17 @@ public class StaminaManager : MonoBehaviour
         }
         else if(!isRegeningTiredStamina)
         {
-            StartCoroutine(TiredDelay());
-            cb.disabledColor = new Color(92f/255f, 87f/255f, 87f/255f, .4f);
-            staminaslider.colors = cb;
+
+            if(visualStamina <= 0)
+            {
+                StartCoroutine(TiredDelay());
+                cb.disabledColor = new Color(92f/255f, 87f/255f, 87f/255f, .4f);
+                staminaslider.colors = cb;
+            }
+            else
+            {
+                visualStamina -= .08f;
+            }
         }
         if(canRegenTiredStamina)
         {
