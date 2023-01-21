@@ -5,7 +5,7 @@ using UnityEngine.Experimental.U2D.Animation;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float topspeed = 50f;
+    public float topspeed = 75f;
     public float currentspeed;
     public float accel = .75f;
     public float factor = 0.01f;
@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public SpriteResolver sheathResolver;
     public GameObject weapon;
     public bool attacking;
+    public bool blocking;
     public bool canMove = true;
     private bool canDodge = true;
     public StaminaManager staminaManager;
@@ -45,11 +46,19 @@ public class PlayerMovement : MonoBehaviour
                 currentspeed += accel*3;
             }
         }
+        if(blocking)
+        {
+            topspeed = 30f;
+        }
+        else
+        {
+            topspeed = 75f;
+        }
         if(currentspeed > topspeed && Input.GetAxisRaw("Run") == 1 && staminaManager.UseStamina(.0075f))
         {
             currentspeed = topspeed;
         }
-        if(currentspeed > 0.5f*topspeed && Input.GetAxisRaw("Run") == 0 )
+        if(currentspeed > 0.5f*topspeed && Input.GetAxisRaw("Run") == 0)
         {
             currentspeed = 0.5f*topspeed;
         }

@@ -278,7 +278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &231019856
 Transform:
   m_ObjectHideFlags: 0
@@ -1048,7 +1048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &525759091
 Transform:
   m_ObjectHideFlags: 0
@@ -1977,7 +1977,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 13
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -5489,7 +5489,6 @@ GameObject:
   - component: {fileID: 1487687799}
   - component: {fileID: 1487687800}
   - component: {fileID: 1487687801}
-  - component: {fileID: 1487687802}
   - component: {fileID: 1487687803}
   m_Layer: 0
   m_Name: Player
@@ -5624,6 +5623,7 @@ MonoBehaviour:
   sheathResolver: {fileID: 597419248}
   weapon: {fileID: 1617632088}
   attacking: 0
+  blocking: 0
   canMove: 1
   staminaManager: {fileID: 1487687803}
 --- !u!95 &1487687800
@@ -5664,18 +5664,6 @@ MonoBehaviour:
   previousAttack: 
   attackDecay: 0
   IsBlocking: 0
---- !u!114 &1487687802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1487687794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9866446a9650e149a4d68d32d73d1f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1487687803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6426,7 +6414,7 @@ GameObject:
   - component: {fileID: 1891794134}
   - component: {fileID: 1891794136}
   - component: {fileID: 1891794135}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Dust Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6441,7 +6429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891794133}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.34, y: 0.542, z: 0}
+  m_LocalPosition: {x: -0.34, y: 0.542, z: 0.25}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1487687797}
@@ -6487,7 +6475,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 12
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -7452,7 +7440,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -7464,21 +7452,30 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 0
-          outSlope: 1
+          inSlope: 4.581876
+          outSlope: 4.581876
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.032442745
+        - serializedVersion: 3
+          time: 0.21805055
+          value: 1
+          inSlope: 1.2071334
+          outSlope: 1.2071334
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 1
-          outSlope: 0
+          value: 0.82432556
+          inSlope: -1.5578197
+          outSlope: -1.5578197
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0.09541994
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4

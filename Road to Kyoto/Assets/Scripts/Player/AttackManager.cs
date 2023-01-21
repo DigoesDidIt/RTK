@@ -82,7 +82,7 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((Input.GetKeyDown("j") || Input.GetKeyDown("k"))  && !attacking && playerMovement.currentspeed > 25)
+        if((Input.GetKeyDown("j") || Input.GetKeyDown("k"))  && !attacking && playerMovement.currentspeed > 37.5)
         {
             RunningSlash();
         }
@@ -94,7 +94,7 @@ public class AttackManager : MonoBehaviour
         {
             HeavyAttack();
         }
-        else if(playerMovement.currentspeed < 25)
+        else if(playerMovement.currentspeed < 37.5)
         {
             animator.ResetTrigger("RunningSlash");
         }
@@ -102,7 +102,8 @@ public class AttackManager : MonoBehaviour
         {
             attackDecay +=.025f;
         }
-        playerMovement.attacking = (attacking || IsBlocking);
+        playerMovement.attacking = (attacking);
+        playerMovement.blocking = (IsBlocking);
         if(Input.GetKey("l"))
         {
             IsBlocking = true;
