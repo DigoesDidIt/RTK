@@ -6414,6 +6414,7 @@ GameObject:
   - component: {fileID: 1891794134}
   - component: {fileID: 1891794136}
   - component: {fileID: 1891794135}
+  - component: {fileID: 1891794137}
   m_Layer: 1
   m_Name: Dust Particles
   m_TagString: Untagged
@@ -11224,6 +11225,21 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1891794137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891794133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a31550708ea8845ab360c53ea4a5df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetParticle: 
+  dustCloud: {fileID: 2100000, guid: 011d9fd414fb50f44871d93f466fe2f3, type: 2}
+  splinter: {fileID: 2100000, guid: 6a8c998354174f04fb8655beec7dc3de, type: 2}
 --- !u!1 &1939296261
 GameObject:
   m_ObjectHideFlags: 0
