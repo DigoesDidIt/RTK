@@ -43,9 +43,11 @@ public class OutsideLayerManager : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collider) 
     {
+        print("exited" + isInside);
         
         if(!isInside && collider.gameObject.tag == "Player")
         {
+            print("was player");
             foreach (Transform child in transform)
             {
                 child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
