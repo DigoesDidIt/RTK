@@ -104,18 +104,18 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Upper Right_28
-      position: {x: -75.91516, y: 346.57715, z: 0}
-      rotation: {x: 0, y: 0, z: -0.17549211, w: 0.98448086}
-      length: 418.43674
+      position: {x: 86.80017, y: 314.33203, z: 0}
+      rotation: {x: 0, y: 0, z: -0.225273, w: 0.97429574}
+      length: 255.92206
       parentId: -1
     - name: Upper Right_29
-      position: {x: 418.43683, y: -0.0001550623, z: 0}
-      rotation: {x: 0, y: 0, z: -0.008075105, w: 0.9999674}
-      length: 244.76396
+      position: {x: 255.92197, y: 0.0002542175, z: 0}
+      rotation: {x: 0, y: 0, z: 0.042729124, w: 0.99908674}
+      length: 244.76393
       parentId: 0
     - name: Upper Right_30
-      position: {x: 244.7637, y: 0.00020342952, z: 0}
-      rotation: {x: 0, y: 0, z: 0.008763601, w: 0.9999617}
+      position: {x: 244.76402, y: -0.00016362133, z: 0}
+      rotation: {x: 0, y: 0, z: 0.008763578, w: 0.9999616}
       length: 97.261894
       parentId: 1
     spriteOutline: []
@@ -680,9 +680,9 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Upper Right_32
-      position: {x: 121.35693, y: 571.2362, z: 0}
-      rotation: {x: 0, y: 0, z: 0.5670061, w: 0.82371354}
-      length: 464.34497
+      position: {x: 121.3562, y: 571.2357, z: 0}
+      rotation: {x: 0, y: 0, z: 0.56700593, w: 0.82371366}
+      length: 464.34485
       parentId: -1
     spriteOutline: []
     vertices:
@@ -1835,7 +1835,7 @@ ScriptedImporter:
     - name: Upper Right_4
       position: {x: 246.4043, y: 411.60352, z: 0}
       rotation: {x: 0, y: 0, z: -0.70122343, w: 0.7129416}
-      length: 184.04028
+      length: 184.0404
       parentId: -1
     - name: Upper Right_13
       position: {x: 172.05795, y: -0.00005965898, z: 0}
@@ -1916,7 +1916,7 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 457.28394, y: 317.01196}
       boneWeight:
-        weight0: 0.8363135
+        weight0: 0.8363134
         weight1: 0.16368656
         weight2: 0
         weight3: 0
@@ -2036,7 +2036,7 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 0.14001465, y: 272.594}
       boneWeight:
-        weight0: 0.578765
+        weight0: 0.57876503
         weight1: 0.421235
         weight2: 0
         weight3: 0
@@ -2047,7 +2047,7 @@ ScriptedImporter:
     - position: {x: 0.028015137, y: 212.3479}
       boneWeight:
         weight0: 0.6206294
-        weight1: 0.37937066
+        weight1: 0.37937063
         weight2: 0
         weight3: 0
         boneIndex0: 0
@@ -2067,8 +2067,8 @@ ScriptedImporter:
     - position: {x: 0.8499756, y: 105.57593}
       boneWeight:
         weight0: 0.75858927
-        weight1: 0.13235407
-        weight2: 0.10905681
+        weight1: 0.13235399
+        weight2: 0.10905674
         weight3: 0
         boneIndex0: 0
         boneIndex1: 2
@@ -2077,7 +2077,7 @@ ScriptedImporter:
     - position: {x: 9.865967, y: 50.038086}
       boneWeight:
         weight0: 0.8108609
-        weight1: 0.18913914
+        weight1: 0.18913913
         weight2: 0
         weight3: 0
         boneIndex0: 0
@@ -2087,7 +2087,7 @@ ScriptedImporter:
     - position: {x: 43.559998, y: 32.05591}
       boneWeight:
         weight0: 0.782353
-        weight1: 0.21764696
+        weight1: 0.21764702
         weight2: 0
         weight3: 0
         boneIndex0: 0
@@ -2097,7 +2097,7 @@ ScriptedImporter:
     - position: {x: 104.34198, y: 23.285889}
       boneWeight:
         weight0: 0.6830839
-        weight1: 0.31691617
+        weight1: 0.3169161
         weight2: 0
         weight3: 0
         boneIndex0: 0
@@ -2215,17 +2215,17 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Upper Right_11
-      position: {x: 443.34302, y: 189.29907, z: 0}
+      position: {x: 443.34302, y: 189.29895, z: 0}
       rotation: {x: 0, y: 0, z: -0.636208, w: 0.77151763}
       length: 257.20874
       parentId: -1
     - name: Upper Right_12
-      position: {x: 553.89014, y: 289.79663, z: 0}
+      position: {x: 553.89014, y: 289.7965, z: 0}
       rotation: {x: 0, y: 0, z: -0.37911186, w: 0.9253509}
       length: 355.47183
       parentId: -1
     - name: Upper Right_10
-      position: {x: 236.06702, y: 235.77893, z: 0}
+      position: {x: 236.06702, y: 235.77881, z: 0}
       rotation: {x: 0, y: 0, z: -0.87870824, w: 0.4773593}
       length: 362.3767
       parentId: -1
@@ -2697,47 +2697,47 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Upper Right_26
-      position: {x: 199.84944, y: -0.000307714, z: 0}
-      rotation: {x: 0, y: 0, z: 0.008373547, w: 0.99996495}
-      length: 121.64133
+      position: {x: 199.84975, y: 0.00016049127, z: 0}
+      rotation: {x: 0, y: 0, z: 0.008373809, w: 0.999965}
+      length: 121.641304
       parentId: 1
     - name: Upper Right_25
-      position: {x: 179.90524, y: 0.00029863513, z: 0}
-      rotation: {x: 0, y: 0, z: -0.10963766, w: 0.99397165}
-      length: 199.84958
+      position: {x: 179.90518, y: 0.000056761433, z: 0}
+      rotation: {x: 0, y: 0, z: -0.109638296, w: 0.9939715}
+      length: 199.84953
       parentId: 2
     - name: Upper Right_24
-      position: {x: 131.11282, y: 0.000020098452, z: 0}
-      rotation: {x: 0, y: 0, z: -0.31077743, w: 0.95048267}
-      length: 179.90495
+      position: {x: 131.11295, y: -0.00006243245, z: 0}
+      rotation: {x: 0, y: 0, z: -0.31077746, w: 0.9504827}
+      length: 179.90506
       parentId: 3
     - name: Upper Right_23
-      position: {x: 159.9244, y: 39.37751, z: 0}
-      rotation: {x: 0, y: 0, z: 0.6046377, w: 0.7965007}
-      length: 131.11288
+      position: {x: 159.9244, y: 39.377502, z: 0}
+      rotation: {x: 0, y: 0, z: 0.6046379, w: 0.7965005}
+      length: 131.11285
       parentId: 8
     - name: Upper Right_20
-      position: {x: 162.09344, y: -26.937798, z: 0}
+      position: {x: 162.09344, y: -26.937807, z: 0}
       rotation: {x: 0, y: 0, z: -0.36439294, w: 0.93124527}
       length: 149.79694
       parentId: 8
     - name: Upper Right_21
-      position: {x: 149.79703, y: 0.000015669066, z: 0}
+      position: {x: 149.79701, y: 0.000030799114, z: 0}
       rotation: {x: 0, y: 0, z: -0.005354408, w: 0.9999857}
-      length: 145.56279
+      length: 145.56274
       parentId: 4
     - name: Upper Right_22
-      position: {x: 145.56262, y: -0.00041328932, z: 0}
-      rotation: {x: 0, y: 0, z: -0.059149075, w: 0.99824923}
-      length: 137.90437
+      position: {x: 145.5626, y: -0.0005578036, z: 0}
+      rotation: {x: 0, y: 0, z: -0.05914953, w: 0.9982492}
+      length: 137.90446
       parentId: 5
     - name: Upper Right_27
-      position: {x: 137.90437, y: -0.00009443484, z: 0}
-      rotation: {x: 0, y: 0, z: 0.2686996, w: 0.96322405}
-      length: 114.95745
+      position: {x: 137.90448, y: 0.00007271007, z: 0}
+      rotation: {x: 0, y: 0, z: 0.2687, w: 0.963224}
+      length: 114.957466
       parentId: 6
     - name: Upper Right_13
-      position: {x: 481.30432, y: 632.77405, z: 0}
+      position: {x: 481.30432, y: 632.7739, z: 0}
       rotation: {x: 0, y: 0, z: -0.68113226, w: 0.73216045}
       length: 152.9548
       parentId: -1
@@ -3313,7 +3313,7 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Upper Right_31
-      position: {x: 834.66675, y: 414.35168, z: 0}
+      position: {x: 834.66675, y: 414.35156, z: 0}
       rotation: {x: 0, y: 0, z: -0.97342104, w: 0.22902308}
       length: 812.5631
       parentId: -1
@@ -4138,18 +4138,18 @@ ScriptedImporter:
     internalID: 0
     spriteBone:
     - name: Upper Right_7
-      position: {x: 253.46748, y: 0.000039968727, z: 0}
-      rotation: {x: 0, y: 0, z: -0.059728168, w: 0.9982147}
-      length: 175.28712
+      position: {x: 253.46733, y: 0.00036025682, z: 0}
+      rotation: {x: 0, y: 0, z: -0.059728235, w: 0.99821466}
+      length: 175.28714
       parentId: 1
     - name: Upper Right_6
       position: {x: 101.461426, y: 300.54395, z: 0}
-      rotation: {x: 0, y: 0, z: -0.19253136, w: 0.9812908}
-      length: 253.4676
+      rotation: {x: 0, y: 0, z: -0.19253139, w: 0.9812909}
+      length: 253.4675
       parentId: -1
     - name: Upper Right_8
-      position: {x: 175.2873, y: -0.00031242846, z: 0}
-      rotation: {x: 0, y: 0, z: 0.022740673, w: 0.99974144}
+      position: {x: 175.28712, y: -0.00018722858, z: 0}
+      rotation: {x: 0, y: 0, z: 0.022740727, w: 0.9997414}
       length: 123.237854
       parentId: 0
     spriteOutline: []
@@ -4246,7 +4246,7 @@ ScriptedImporter:
         boneIndex3: 0
     - position: {x: 335.35596, y: 275.3401}
       boneWeight:
-        weight0: 0.8479119
+        weight0: 0.84791183
         weight1: 0.15208814
         weight2: 0
         weight3: 0
@@ -4527,7 +4527,7 @@ ScriptedImporter:
     - position: {x: 343.9441, y: 215.4336}
       boneWeight:
         weight0: 0.5794834
-        weight1: 0.4205167
+        weight1: 0.4205166
         weight2: 0
         weight3: 0
         boneIndex0: 0
@@ -4811,26 +4811,26 @@ ScriptedImporter:
     - name: Upper Right_4
       position: {x: 1659.4043, y: 1474.6035, z: 0}
       rotation: {x: 0, y: 0, z: -0.70122343, w: 0.7129416}
-      length: 184.04028
+      length: 184.0404
       parentId: -1
     - name: Upper Right_5
-      position: {x: 184.04039, y: -0.000011088341, z: 0}
+      position: {x: 184.04051, y: -0.000013111217, z: 0}
       rotation: {x: 0, y: 0, z: -0.03488051, w: 0.9993915}
       length: 172.05779
       parentId: 0
     - name: Upper Right_6
       position: {x: 106.31118, y: 14.297347, z: 0}
-      rotation: {x: 0, y: 0, z: 0.5508405, w: 0.8346105}
-      length: 253.46762
+      rotation: {x: 0, y: 0, z: 0.5508405, w: 0.8346106}
+      length: 253.46751
       parentId: 0
     - name: Upper Right_7
-      position: {x: 253.46753, y: -0.000083431594, z: 0}
+      position: {x: 253.4674, y: 0.000057657184, z: 0}
       rotation: {x: 0, y: 0, z: -0.059728205, w: 0.9982147}
-      length: 175.28711
+      length: 175.28714
       parentId: 2
     - name: Upper Right_8
-      position: {x: 175.28719, y: -0.000045675944, z: 0}
-      rotation: {x: 0, y: 0, z: 0.022740679, w: 0.99974144}
+      position: {x: 175.28722, y: -0.000045675944, z: 0}
+      rotation: {x: 0, y: 0, z: 0.022740733, w: 0.99974144}
       length: 123.23786
       parentId: 3
     - name: Upper Right_9
@@ -4854,7 +4854,7 @@ ScriptedImporter:
       length: 355.47183
       parentId: 1
     - name: Upper Right_13
-      position: {x: 172.05777, y: -0.000076123026, z: 0}
+      position: {x: 172.05777, y: -0.000069631584, z: 0}
       rotation: {x: 0, y: 0, z: 0.062650666, w: 0.99803555}
       length: 152.95482
       parentId: 1
@@ -4864,48 +4864,48 @@ ScriptedImporter:
       length: 149.79694
       parentId: 9
     - name: Upper Right_21
-      position: {x: 149.79694, y: -0.000002320754, z: 0}
+      position: {x: 149.79692, y: 0.00001280928, z: 0}
       rotation: {x: 0, y: 0, z: -0.005354422, w: 0.9999857}
-      length: 145.56279
+      length: 145.56274
       parentId: 10
     - name: Upper Right_22
-      position: {x: 145.56274, y: -0.0004564042, z: 0}
-      rotation: {x: 0, y: 0, z: -0.059149083, w: 0.9982492}
-      length: 137.90437
+      position: {x: 145.56268, y: -0.00047884817, z: 0}
+      rotation: {x: 0, y: 0, z: -0.05914959, w: 0.9982492}
+      length: 137.90446
       parentId: 11
     - name: Upper Right_23
       position: {x: 159.92444, y: 39.37747, z: 0}
-      rotation: {x: 0, y: 0, z: 0.6046376, w: 0.7965007}
-      length: 131.1129
+      rotation: {x: 0, y: 0, z: 0.60463786, w: 0.7965005}
+      length: 131.11288
       parentId: 9
     - name: Upper Right_24
-      position: {x: 131.11288, y: 0.000048108952, z: 0}
+      position: {x: 131.11288, y: 0.000015412277, z: 0}
       rotation: {x: 0, y: 0, z: -0.31077743, w: 0.9504827}
-      length: 179.90497
+      length: 179.90506
       parentId: 13
     - name: Upper Right_25
-      position: {x: 179.90508, y: 0.00011380328, z: 0}
-      rotation: {x: 0, y: 0, z: -0.109637626, w: 0.99397165}
-      length: 199.8496
+      position: {x: 179.90521, y: 0.00007653615, z: 0}
+      rotation: {x: 0, y: 0, z: -0.10963832, w: 0.9939716}
+      length: 199.84956
       parentId: 14
     - name: Upper Right_26
-      position: {x: 199.8496, y: -0.00008699858, z: 0}
-      rotation: {x: 0, y: 0, z: 0.008373508, w: 0.99996495}
+      position: {x: 199.84956, y: 0.000038266473, z: 0}
+      rotation: {x: 0, y: 0, z: 0.008373803, w: 0.999965}
       length: 121.64132
       parentId: 15
     - name: Upper Right_27
-      position: {x: 137.90443, y: -0.000061703875, z: 0}
-      rotation: {x: 0, y: 0, z: 0.2686996, w: 0.9632241}
+      position: {x: 137.90442, y: 0.00006600002, z: 0}
+      rotation: {x: 0, y: 0, z: 0.26870003, w: 0.96322393}
       length: 114.95748
       parentId: 12
     - name: Upper Right_28
-      position: {x: 56.980152, y: -184.289, z: 0}
-      rotation: {x: 0, y: 0, z: 0.5652254, w: 0.8249365}
-      length: 418.43668
+      position: {x: 91.917244, y: -22.130371, z: 0}
+      rotation: {x: 0, y: 0, z: 0.5225925, w: 0.85258263}
+      length: 255.92204
       parentId: 0
     - name: Upper Right_29
-      position: {x: 418.43668, y: -0.000026846421, z: 0}
-      rotation: {x: 0, y: 0, z: -0.008075115, w: 0.9999674}
+      position: {x: 255.922, y: 0.00009396262, z: 0}
+      rotation: {x: 0, y: 0, z: 0.04272912, w: 0.99908674}
       length: 244.76393
       parentId: 18
     - name: Upper Right_30
@@ -4920,7 +4920,7 @@ ScriptedImporter:
       parentId: 9
     - name: Upper Right_32
       position: {x: 97.26191, y: -0.0002521865, z: 0}
-      rotation: {x: 0, y: 0, z: 0.70227194, w: 0.7119089}
+      rotation: {x: 0, y: 0, z: 0.70227194, w: 0.7119088}
       length: 464.34485
       parentId: 20
     parts:
