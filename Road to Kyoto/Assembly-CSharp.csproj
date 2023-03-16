@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Enviroment\OutsideLayerManager.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+     <Compile Include="Assets\LOSManager.cs" />
      <None Include="Assets\Bolt\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
      <None Include="Assets\Bolt\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Engine.xml" />
      <None Include="Assets\Bolt\Ludiq\Assemblies\Bolt.State.Runtime.xml" />
@@ -436,35 +437,38 @@
  <Reference Include="UnityEngine.XRModule">
  <HintPath>/Applications/Unity/Hub/Editor/2020.1.3f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
- <Reference Include="Ludiq.Graphs.Editor">
- <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Ludiq.Graphs.Editor.dll</HintPath>
+ <Reference Include="Bolt.Flow.Editor">
+ <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Bolt.Flow.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Ludiq.Core.Runtime">
- <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Ludiq.Core.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Ludiq.Graphs.Runtime">
- <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Ludiq.Graphs.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Bolt.Core.Runtime">
- <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Bolt.Core.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Bolt.Flow.Runtime">
- <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Bolt.Flow.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Ionic.Zip">
- <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Ionic.Zip.dll</HintPath>
+ <Reference Include="Bolt.State.Runtime">
+ <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Bolt.State.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Antlr3.Runtime">
  <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Antlr3.Runtime.dll</HintPath>
  </Reference>
- <Reference Include="MiscUtil">
- <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/MiscUtil.dll</HintPath>
+ <Reference Include="Ionic.Zip">
+ <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Ionic.Zip.dll</HintPath>
  </Reference>
  <Reference Include="Bolt.Core.Editor">
  <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Bolt.Core.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Ludiq.Core.Runtime">
+ <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Ludiq.Core.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="YamlDotNet">
+ <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/YamlDotNet.dll</HintPath>
+ </Reference>
+ <Reference Include="MiscUtil">
+ <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/MiscUtil.dll</HintPath>
+ </Reference>
+ <Reference Include="Ludiq.Graphs.Runtime">
+ <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Ludiq.Graphs.Runtime.dll</HintPath>
+ </Reference>
  <Reference Include="Ludiq.Platforms">
  <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Ludiq.Platforms.dll</HintPath>
+ </Reference>
+ <Reference Include="Ludiq.Graphs.Editor">
+ <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Ludiq.Graphs.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Ludiq.Core.Editor">
  <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Ludiq.Core.Editor.dll</HintPath>
@@ -472,14 +476,11 @@
  <Reference Include="Bolt.State.Editor">
  <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Bolt.State.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Bolt.State.Runtime">
- <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Bolt.State.Runtime.dll</HintPath>
+ <Reference Include="Bolt.Core.Runtime">
+ <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Bolt.Core.Runtime.dll</HintPath>
  </Reference>
- <Reference Include="Bolt.Flow.Editor">
- <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Bolt.Flow.Editor.dll</HintPath>
- </Reference>
- <Reference Include="YamlDotNet">
- <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/YamlDotNet.dll</HintPath>
+ <Reference Include="Bolt.Flow.Runtime">
+ <HintPath>/Users/period5/Documents/GitHub/RTK/Road to Kyoto/Assets/Bolt/Ludiq/Assemblies/Bolt.Flow.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>/Applications/Unity/Hub/Editor/2020.1.3f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
