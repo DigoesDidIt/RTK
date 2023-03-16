@@ -7,8 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public float topspeed = 75f;
     public float currentspeed;
-    public float accel = .75f;
-    public float factor = 0.01f;
+    public float accel = .4f;
+    public float factor = 0.0012f;
     private bool movingopposite;
     private bool directioniszero;
     public Animator animator;
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
         Movement(Input.GetAxisRaw("Horizontal"));

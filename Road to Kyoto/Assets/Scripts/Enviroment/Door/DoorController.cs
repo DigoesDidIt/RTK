@@ -24,7 +24,7 @@ public class DoorController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other) 
     {
-        if(other.gameObject.tag == "Player" && isOpen == false && playerMovement.currentspeed <= 25)
+        if(other.gameObject.tag == "Player" && isOpen == false && playerMovement.currentspeed <= 37.5)
         {
             collider.offset = new Vector2(1.36f,1f);
             collider.size = new Vector2(0.25f,1f);
