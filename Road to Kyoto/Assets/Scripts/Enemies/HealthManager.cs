@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Bolt;
+using Ludiq;
 
 public class HealthManager : MonoBehaviour
 {
@@ -17,10 +19,7 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health <= 0)
-        {
-            return;
-        }
+        Variables.Object(gameObject).Set("Health", health);
     }
     void OnTriggerEnter2D(Collider2D hurtbox) 
     {
@@ -36,7 +35,6 @@ public class HealthManager : MonoBehaviour
         } 
         
         StartCoroutine(InvulFrames());
-        print("dummy" + hurtbox.gameObject.tag);
     }
     IEnumerator InvulFrames()
     {

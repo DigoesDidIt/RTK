@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Bolt;
+using Ludiq;
 
 public class LOSManager : MonoBehaviour
 {
@@ -17,5 +19,6 @@ public class LOSManager : MonoBehaviour
     void Update()
     {
         distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+        Variables.Object(gameObject).Set("Distance to Player", distanceToPlayer);
     }
 }
