@@ -15992,7 +15992,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571328854}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 969a0a50491164ccda78bf1ad895daf6, type: 2}
   m_CullingMode: 0
@@ -16033,7 +16033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Distance
-      to Player","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"Health","value":{"$content":1.0,"$type":"System.Single"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      to Player","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"Health","value":{"$content":1.0,"$type":"System.Single"},"$version":"A"},{"name":"Direction","value":{"$content":0,"$type":"System.Int32"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!114 &1571328862
 MonoBehaviour:
