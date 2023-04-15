@@ -14781,6 +14781,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.550519
       objectReference: {fileID: 0}
+    - target: {fileID: -8355004258342564332, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.0631118
+      objectReference: {fileID: 0}
+    - target: {fileID: -8355004258342564332, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14297347
+      objectReference: {fileID: 0}
     - target: {fileID: -7100521584968002782, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
@@ -15149,6 +15157,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.0000025218649
       objectReference: {fileID: 0}
+    - target: {fileID: 1603780859192690381, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603780859192690381, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2661062261282787398, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
@@ -15176,6 +15192,14 @@ PrefabInstance:
     - target: {fileID: 2661062261282787398, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.00000046541973
+      objectReference: {fileID: 0}
+    - target: {fileID: 2661062261282787398, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2661062261282787398, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2977058355791114034, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
       propertyPath: m_SortingOrder
@@ -16017,6 +16041,7 @@ GameObject:
   - component: {fileID: 1571328861}
   - component: {fileID: 1571328860}
   - component: {fileID: 1571328862}
+  - component: {fileID: 1571328859}
   m_Layer: 0
   m_Name: Novice Swordsman
   m_TagString: Untagged
@@ -16091,6 +16116,19 @@ MonoBehaviour:
   health: 3
   attackManager: {fileID: 1487687801}
   blocking: 0
+--- !u!114 &1571328859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571328854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6734df3525d54ff4dbc7a2c19ebbad1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentBehavior: 
 --- !u!114 &1571328860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16121,7 +16159,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Distance
-      to Player","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"Health","value":{"$content":1.0,"$type":"System.Single"},"$version":"A"},{"name":"Direction","value":{"$content":0,"$type":"System.Int32"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      to Player","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"Health","value":{"$content":1.0,"$type":"System.Single"},"$version":"A"},{"name":"Direction","value":{"$content":0,"$type":"System.Int32"},"$version":"A"},{"name":"Can
+      Walk","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!114 &1571328862
 MonoBehaviour:
