@@ -15945,6 +15945,7 @@ MonoBehaviour:
   blocking: 0
   canMove: 1
   staminaManager: {fileID: 1487687803}
+  inCombat: 0
 --- !u!95 &1487687800
 Animator:
   serializedVersion: 3
@@ -15983,6 +15984,7 @@ MonoBehaviour:
   previousAttack: 
   attackDecay: 0
   IsBlocking: 0
+  attackQueue: []
 --- !u!114 &1487687802
 MonoBehaviour:
   m_ObjectHideFlags: 0

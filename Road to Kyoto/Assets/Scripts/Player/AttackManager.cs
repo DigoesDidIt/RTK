@@ -12,6 +12,7 @@ public class AttackManager : MonoBehaviour
     public string previousAttack;
     public float attackDecay;
     public bool IsBlocking;
+    public List<string> attackQueue;
     
     // Start is called before the first frame update
     void LightAttack()
@@ -24,7 +25,6 @@ public class AttackManager : MonoBehaviour
                 attacking = true;
                 //animator.ResetTrigger("Light2");
                 //animator.ResetTrigger("Light3");
-                playerMovement.currentspeed += -15;
                 animator.SetTrigger("Light1");
                 StartCoroutine(Light1Delay());
                 previousAttack = "Light1";
@@ -82,18 +82,33 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((Input.GetKeyDown("j") || Input.GetKeyDown("k"))  && !attacking && playerMovement.currentspeed > 37.5)
+        if(Input.GetKeyDown("j"))
         {
-            RunningSlash();
+            attackQueue.Add("j");
         }
-        else if(Input.GetKeyDown("j"))// && !attacking)
+        if (Input.GetKeyDown("k"))
         {
-            LightAttack();
+            attackQueue.Add("k");
         }
-        if(Input.GetKeyDown("k"))
+        if(attackQueue.Count > 0)
         {
-            HeavyAttack();
+            if (!attacking && playerMovement.currentspeed > 37.5)
+            {
+                RunningSlash();
+                attackQueue.RemoveAt(0);
+            }
+            else if(attackQueue[0] == "j" && !attacking)
+            {
+                LightAttack();
+                attackQueue.RemoveAt(0);
+            }
+            if(attackQueue[0] == "k" && !attacking)
+            {
+                HeavyAttack();
+                attackQueue.RemoveAt(0);
+            }
         }
+            
         else if(playerMovement.currentspeed < 37.5)
         {
             animator.ResetTrigger("RunningSlash");
@@ -119,7 +134,6 @@ public class AttackManager : MonoBehaviour
     IEnumerator Light1Delay()
     {
         yield return new WaitForSeconds(0.2f);
-        playerMovement.currentspeed += 15;
         yield return new WaitForSeconds(0.5f);
         attacking = false;
     }
