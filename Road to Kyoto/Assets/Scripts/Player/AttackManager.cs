@@ -10,7 +10,6 @@ public class AttackManager : MonoBehaviour
     public GameObject hurtbox;
     private bool attacking = false;
     public string previousAttack;
-    public float attackDecay;
     public bool IsBlocking;
     public List<string> attackQueue;
     
@@ -35,6 +34,7 @@ public class AttackManager : MonoBehaviour
                 //animator.ResetTrigger("Light1");
                 //animator.ResetTrigger("Light3");
                 animator.SetTrigger("Light2");
+                StartCoroutine(Light1Delay());
                 previousAttack = "Light2";
 
             }
@@ -44,11 +44,11 @@ public class AttackManager : MonoBehaviour
                 //animator.ResetTrigger("Light1");
                 //animator.ResetTrigger("Light2");
                 animator.SetTrigger("Light3");
+                StartCoroutine(Light1Delay());
                 previousAttack = "None";
 
             }
             StartCoroutine(StartAttackCooldown(previousAttack));
-            attackDecay = 0;
         }
     }
     void HeavyAttack()
@@ -57,7 +57,6 @@ public class AttackManager : MonoBehaviour
         {
             hurtbox.tag = "Heavy Attack";
             animator.SetTrigger("Heavy");
-            attackDecay = 0;
             attacking = true;
             StartCoroutine(HeavyDelay());
             StartCoroutine(StartAttackCooldown(previousAttack));
@@ -76,7 +75,6 @@ public class AttackManager : MonoBehaviour
     void Start()
     {
         previousAttack = "None";
-        attackDecay = 1;
     }
 
     // Update is called once per frame
@@ -92,7 +90,7 @@ public class AttackManager : MonoBehaviour
         }
         if(attackQueue.Count > 0)
         {
-            if (!attacking && playerMovement.currentspeed > 37.5)
+            if (!attacking && (playerMovement.currentspeed > 37.5 || playerMovement.currentspeed < -37.5))
             {
                 RunningSlash();
                 attackQueue.RemoveAt(0);
@@ -113,10 +111,6 @@ public class AttackManager : MonoBehaviour
         {
             animator.ResetTrigger("RunningSlash");
         }
-        if(attackDecay < 1)
-        {
-            attackDecay +=.025f;
-        }
         playerMovement.attacking = (attacking);
         playerMovement.blocking = (IsBlocking);
         if(Input.GetKey("l"))
@@ -133,8 +127,7 @@ public class AttackManager : MonoBehaviour
 
     IEnumerator Light1Delay()
     {
-        yield return new WaitForSeconds(0.2f);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.6f);
         attacking = false;
     }
     IEnumerator SlashDelay()
@@ -146,7 +139,7 @@ public class AttackManager : MonoBehaviour
     }
     IEnumerator StartAttackCooldown(string pa)
     {
-        yield return new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(1.2f);
         if(previousAttack == pa)
         {
             previousAttack = "None";
@@ -159,7 +152,7 @@ public class AttackManager : MonoBehaviour
     }
     IEnumerator HeavyDelay()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(.8f);
         attacking = false;
     }
     

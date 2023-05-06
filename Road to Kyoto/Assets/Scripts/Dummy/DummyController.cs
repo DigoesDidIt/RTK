@@ -27,13 +27,13 @@ public class DummyController : MonoBehaviour
     {
         if(hurtbox.gameObject.tag == "Light Attack" && Invul == false)
         {
-            health -= attackManager.attackDecay;
+            health -= 1;
             Invul = true;
             animator.SetTrigger("Hit");
         }   
         else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false)
         {
-            health -= attackManager.attackDecay;
+            health -= 1;
             Invul = true;
             animator.SetTrigger("HeavyHit");
         } 

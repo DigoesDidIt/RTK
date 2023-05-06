@@ -65,9 +65,9 @@ public class PlayerMovement : MonoBehaviour
         }
         if (currentspeed < -1*topspeed && Input.GetAxisRaw("Run") == 1 && staminaManager.UseStamina(.0075f) && !inCombat)
         {
-            currentspeed = topspeed;
+            currentspeed = -1*topspeed;
         }
-        if (currentspeed < -0.5f*topspeed)
+        if (currentspeed < -0.5f*topspeed && Input.GetAxisRaw("Run") == 0)
         {
             currentspeed = -0.5f*topspeed;
         }
@@ -122,7 +122,8 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(DodgeDelay());
 
         }
-        
+        animator.SetBool("InCombat", inCombat);
+
     }
     IEnumerator DodgeDelay()
     {
