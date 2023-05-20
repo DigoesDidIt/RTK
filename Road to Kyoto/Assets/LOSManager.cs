@@ -12,7 +12,7 @@ public class LOSManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        distanceToPlayer = 100;
     }
 
     // Update is called once per frame
@@ -20,5 +20,14 @@ public class LOSManager : MonoBehaviour
     {
         distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
         Variables.Object(gameObject).Set("Distance to Player", distanceToPlayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(-1*transform.localScale.x, 0),5);
+        if (hit.collider.gameObject.tag == "Player")
+        {
+            canSeePlayer = true;
+        }
+        else
+        {
+            canSeePlayer = false;
+        }
     }
 }
