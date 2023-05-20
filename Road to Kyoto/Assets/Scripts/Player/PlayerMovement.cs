@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove = true;
     private bool canDodge = true;
     public StaminaManager staminaManager;
-    public bool inCombat;
     // Start is called before the first frame update
     void Movement(float direction)
     {
@@ -63,21 +62,9 @@ public class PlayerMovement : MonoBehaviour
         {
             currentspeed = 0.5f*topspeed;
         }
-        if (currentspeed < -1*topspeed && Input.GetAxisRaw("Run") == 1 && staminaManager.UseStamina(.0075f) && !inCombat)
-        {
-            currentspeed = -1*topspeed;
-        }
-        if (currentspeed < -0.5f*topspeed && Input.GetAxisRaw("Run") == 0)
+        if(currentspeed < -0.5f*topspeed)
         {
             currentspeed = -0.5f*topspeed;
-        }
-        if((currentspeed > 0  && (direction == 1))|| inCombat)
-        {
-            transform.localScale = new Vector3(1,1,1);
-        }
-        else if(currentspeed < 0 && (direction == -1))
-        {
-            transform.localScale= new Vector3(-1, 1, 1);
         }
         
     }
@@ -122,8 +109,7 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(DodgeDelay());
 
         }
-        animator.SetBool("InCombat", inCombat);
-
+        
     }
     IEnumerator DodgeDelay()
     {

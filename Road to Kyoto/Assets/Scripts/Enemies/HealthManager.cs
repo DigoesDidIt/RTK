@@ -25,12 +25,12 @@ public class HealthManager : MonoBehaviour
     {
         if(hurtbox.gameObject.tag == "Light Attack" && Invul == false && blocking == false)
         {
-            health -= 1;
+            health -= attackManager.attackDecay;
             Invul = true;
         }   
         else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false && blocking == false)
         {
-            health -= 1;
+            health -= attackManager.attackDecay;
             Invul = true;
         } 
         
