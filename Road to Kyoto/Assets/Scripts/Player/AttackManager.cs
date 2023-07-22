@@ -12,6 +12,8 @@ public class AttackManager : MonoBehaviour
     public string previousAttack;
     public bool IsBlocking;
     public List<string> attackQueue;
+    public bool IsChargingSpecial;
+    public bool IsSpecialReady;
     
     // Start is called before the first frame update
     void LightAttack()
@@ -71,6 +73,14 @@ public class AttackManager : MonoBehaviour
             StartCoroutine(SlashDelay());
         }
     }
+    void SpecialAttack()
+    {
+        hurtbox.tag = "Special Attack";
+        animator.SetTrigger("Special");
+        attacking = true;
+        StartCoroutine(SpecialDelay());
+        StartCoroutine(StartAttackCooldown(previousAttack));
+    }
 
     void Start()
     {
@@ -80,14 +90,26 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("j"))
+        if(Input.GetKeyUp("j"))
         {
             attackQueue.Add("j");
         }
         if (Input.GetKeyDown("k"))
         {
+            IsChargingSpecial = false;
+            IsSpecialReady = false;
+            StartCoroutine(ChargeDelay());
+        }
+        if (Input.GetKeyUp("k") && !IsChargingSpecial)
+        {
             attackQueue.Add("k");
         }
+        if(Input.GetKeyUp("k") && IsSpecialReady)
+        {
+            SpecialAttack();
+        }
+        
+        
         if(attackQueue.Count > 0)
         {
             if (!attacking && (playerMovement.currentspeed > 37.5 || playerMovement.currentspeed < -37.5))
@@ -155,5 +177,18 @@ public class AttackManager : MonoBehaviour
         yield return new WaitForSeconds(.8f);
         attacking = false;
     }
-    
+    IEnumerator ChargeDelay()
+    {
+        yield return new WaitForSeconds(.20f);
+        IsChargingSpecial = true;
+        attackQueue.Clear();
+        yield return new WaitForSeconds(1.30f);
+        IsSpecialReady = true;
+    }
+    IEnumerator SpecialDelay()
+    {
+        yield return new WaitForSeconds(.8f);
+        attacking = false;
+    }
+
 }

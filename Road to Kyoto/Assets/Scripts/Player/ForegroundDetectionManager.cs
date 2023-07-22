@@ -21,6 +21,7 @@ public class ForegroundDetectionManager : MonoBehaviour
     {
        if(collider.gameObject.tag == "Foreground")
         {
+            print(collider);
             collider.gameObject.GetComponent<OutsideLayerManager>().Show();
             globalLight.intensity = .8f; 
         } 
