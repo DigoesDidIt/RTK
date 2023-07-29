@@ -14265,6 +14265,7 @@ MonoBehaviour:
   attackQueue: []
   IsChargingSpecial: 0
   IsSpecialReady: 0
+  swordTrail: {fileID: 0}
 --- !u!114 &1487687803
 MonoBehaviour:
   m_ObjectHideFlags: 0
