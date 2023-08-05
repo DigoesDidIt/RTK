@@ -36,8 +36,14 @@ public class DummyController : MonoBehaviour
             health -= 1;
             Invul = true;
             animator.SetTrigger("HeavyHit");
-        } 
-        
+        }
+        else if (hurtbox.gameObject.tag == "Special Attack" && Invul == false)
+        {
+            health -= 1;
+            Invul = true;
+            animator.SetTrigger("HeavyHit");
+        }
+
         StartCoroutine(InvulFrames());
         print("dummy" + hurtbox.gameObject.tag);
     }

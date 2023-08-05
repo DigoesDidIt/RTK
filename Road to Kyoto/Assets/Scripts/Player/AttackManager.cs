@@ -15,7 +15,11 @@ public class AttackManager : MonoBehaviour
     public bool IsChargingSpecial;
     public bool IsSpecialReady;
     public ParticleSystem swordTrail;
-    
+    private Gradient grad = new Gradient();
+    private GradientColorKey[] blackToRed = { new GradientColorKey(Color.black, 0), new GradientColorKey(Color.red, 1) };
+    private GradientAlphaKey[] solidToTransparent = { new GradientAlphaKey(1, 0), new GradientAlphaKey(0, 1) };
+    private GradientColorKey[] blackToWhite = { new GradientColorKey(Color.black, 0), new GradientColorKey(Color.white, 1) };
+
     // Start is called before the first frame update
     void LightAttack()
     {
@@ -89,6 +93,9 @@ public class AttackManager : MonoBehaviour
     void Start()
     {
         previousAttack = "None";
+        grad.SetKeys(blackToWhite, solidToTransparent);
+        var cot = swordTrail.GetComponent<ParticleSystem>().trails;
+        cot.colorOverLifetime = grad;
     }
 
     // Update is called once per frame
@@ -108,16 +115,18 @@ public class AttackManager : MonoBehaviour
         {
             attackQueue.Add("k");
         }
-        if(Input.GetKeyUp("k") && IsSpecialReady)
+        if(Input.GetKeyUp("k") && IsSpecialReady && staminaManager.UseStamina(2.5f))
         {
             SpecialAttack();
-            
         }
-        if(Input.GetKeyUp("k") && IsChargingSpecial && !IsSpecialReady)
+        if((Input.GetKeyUp("k") && IsChargingSpecial && !IsSpecialReady)||(Input.GetKeyUp("k") && IsSpecialReady && !staminaManager.UseStamina(2.5f)))
         {
             animator.SetBool("ChargingSp", false);
             IsChargingSpecial = false;
             attacking = false;
+            IsSpecialReady = false;
+            animator.SetBool("Special", false);
+            Debug.Log("issue with animations");
         }
         
         
@@ -198,15 +207,13 @@ public class AttackManager : MonoBehaviour
             attackQueue.Clear();
             animator.SetBool("ChargingSp", true);
             yield return new WaitForSeconds(1.30f);
-            if(IsChargingSpecial && staminaManager.UseStamina(2.5f))
+            if(IsChargingSpecial)
             {
                 IsSpecialReady = true;
                 animator.SetBool("Special",true);
-                Gradient grad = new Gradient();
-                GradientColorKey[] redToWhite = {new GradientColorKey(Color.red, 0), new GradientColorKey(Color.white, 1)};
-                GradientAlphaKey[] solidToTransparent = {new GradientAlphaKey(1,0), new GradientAlphaKey(0,1)};
-                grad.SetKeys(redToWhite,solidToTransparent);
-                swordTrail.GetComponent<ParticleSystem>().SetTrails().colorOverTrail = grad;
+                grad.SetKeys(blackToRed,solidToTransparent);
+                var cot = swordTrail.GetComponent<ParticleSystem>().trails;
+                cot.colorOverLifetime = grad;
             }
             
         }
@@ -217,7 +224,9 @@ public class AttackManager : MonoBehaviour
         yield return new WaitForSeconds(.8f);
         attacking = false;
         animator.SetBool("Special",false);
-
+        grad.SetKeys(blackToWhite, solidToTransparent);
+        var cot = swordTrail.GetComponent<ParticleSystem>().trails;
+        cot.colorOverLifetime = grad;
     }
 
 }

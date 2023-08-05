@@ -32,8 +32,13 @@ public class HealthManager : MonoBehaviour
         {
             health -= 1;
             Invul = true;
-        } 
-        
+        }
+        else if (hurtbox.gameObject.tag == "Special Attack" && Invul == false)
+        {
+            health -= 1;
+            Invul = true;
+        }
+
         StartCoroutine(InvulFrames());
     }
     IEnumerator InvulFrames()
