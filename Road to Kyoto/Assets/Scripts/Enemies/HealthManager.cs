@@ -20,6 +20,7 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
         Variables.Object(gameObject).Set("Health", health);
+        blocking = attackManager.IsBlocking;
     }
     void OnTriggerEnter2D(Collider2D hurtbox) 
     {

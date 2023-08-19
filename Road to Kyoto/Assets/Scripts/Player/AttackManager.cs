@@ -19,6 +19,7 @@ public class AttackManager : MonoBehaviour
     private GradientColorKey[] blackToRed = { new GradientColorKey(Color.black, 0), new GradientColorKey(Color.red, 1) };
     private GradientAlphaKey[] solidToTransparent = { new GradientAlphaKey(1, 0), new GradientAlphaKey(0, 1) };
     private GradientColorKey[] blackToWhite = { new GradientColorKey(Color.black, 0), new GradientColorKey(Color.white, 1) };
+    private IEnumerator chargedelay;
 
     // Start is called before the first frame update
     void LightAttack()
@@ -109,7 +110,8 @@ public class AttackManager : MonoBehaviour
         {
             IsChargingSpecial = false;
             IsSpecialReady = false;
-            StartCoroutine(ChargeDelay());
+            chargedelay = ChargeDelay();
+            StartCoroutine(chargedelay);
         }
         if (Input.GetKeyUp("k") && !IsChargingSpecial)
         {
@@ -126,7 +128,8 @@ public class AttackManager : MonoBehaviour
             attacking = false;
             IsSpecialReady = false;
             animator.SetBool("Special", false);
-            Debug.Log("issue with animations");
+            StopCoroutine(chargedelay);
+            
         }
         
         
