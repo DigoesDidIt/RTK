@@ -158,7 +158,7 @@ public class AttackManager : MonoBehaviour
         }
         playerMovement.attacking = (attacking);
         playerMovement.blocking = (IsBlocking);
-        if(Input.GetKey("l"))
+        if(Input.GetKey("l") && staminaManager.stamina != 0)
         {
             IsBlocking = true;
             print("Blocking");

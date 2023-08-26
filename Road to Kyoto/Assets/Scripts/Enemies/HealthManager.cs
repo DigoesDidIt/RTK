@@ -8,8 +8,10 @@ public class HealthManager : MonoBehaviour
 {
     public float health;
     public AttackManager attackManager;
+    public StaminaManager staminaManager;
     private bool Invul;
     public bool blocking;
+    public bool parry;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,31 +22,68 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
         Variables.Object(gameObject).Set("Health", health);
-        blocking = attackManager.IsBlocking;
+        
+        if(attackManager.IsBlocking == true && !(blocking == true || parry == true))
+        {
+            parry = true;
+            StartCoroutine(ParryTimer());
+            blocking = true;
+
+        }
+        else if(attackManager.IsBlocking == false)
+        {
+            parry = false;
+            blocking = false;
+        }
     }
     void OnTriggerEnter2D(Collider2D hurtbox) 
     {
-        if(hurtbox.gameObject.tag == "Light Attack" && Invul == false && blocking == false)
+        if(hurtbox.gameObject.tag == "Light Attack" && Invul == false && blocking == false && !parry)
         {
             health -= 1;
             Invul = true;
+            StartCoroutine(InvulFrames());
         }   
-        else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false && blocking == false)
+        else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false && blocking == false && !parry)
         {
             health -= 1;
             Invul = true;
+            StartCoroutine(InvulFrames());
         }
-        else if (hurtbox.gameObject.tag == "Special Attack" && Invul == false)
+        else if (hurtbox.gameObject.tag == "Special Attack" && Invul == false && !parry)
         {
             health -= 1;
             Invul = true;
+            StartCoroutine(InvulFrames());
+        }
+        else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && blocking && !parry)
+        {
+            staminaManager.UseStamina(2f);
+            hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Blocked");
+            if(staminaManager.stamina <= 0)
+            {
+                attackManager.animator.SetTrigger("BlockBreak");
+                attackManager.IsBlocking = false;
+            }
+        }
+        else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack") && parry)
+        {
+            staminaManager.UseStamina(-2f);
+            hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Blocked");
+            attackManager.animator.SetTrigger("Parry");
         }
 
-        StartCoroutine(InvulFrames());
+        
     }
     IEnumerator InvulFrames()
     {
         yield return new WaitForSeconds(.25f);
         Invul = false;
+    }
+    IEnumerator ParryTimer()
+    {
+        yield return new WaitForSeconds(.3f);
+        parry = false;
+        
     }
 }

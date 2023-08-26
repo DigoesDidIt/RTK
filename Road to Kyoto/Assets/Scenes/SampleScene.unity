@@ -14338,7 +14338,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   attackManager: {fileID: 1487687801}
+  staminaManager: {fileID: 1487687803}
   blocking: 0
+  parry: 0
 --- !u!114 &1487687803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14446,7 +14448,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   attackManager: {fileID: 1487687801}
+  staminaManager: {fileID: 0}
   blocking: 0
+  parry: 0
 --- !u!114 &1571328859
 MonoBehaviour:
   m_ObjectHideFlags: 0
