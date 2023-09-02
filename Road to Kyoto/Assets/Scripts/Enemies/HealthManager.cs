@@ -69,8 +69,9 @@ public class HealthManager : MonoBehaviour
         else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack") && parry)
         {
             staminaManager.UseStamina(-2f);
-            hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Blocked");
-            attackManager.animator.SetTrigger("Parry");
+            hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Stunned");
+            attackManager.animator.SetBool("Parry", true);
+            Variables.Object(hurtbox.transform.parent.transform.parent.gameObject).Set("Stunned", true);
         }
 
         
@@ -84,6 +85,7 @@ public class HealthManager : MonoBehaviour
     {
         yield return new WaitForSeconds(.3f);
         parry = false;
-        
+        attackManager.animator.SetBool("Parry", false);
+
     }
 }

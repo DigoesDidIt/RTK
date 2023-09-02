@@ -28,7 +28,7 @@ public class StaminaManager : MonoBehaviour
     {
         
         stamina = Mathf.Max(stamina, 0);
-        //stamina = Mathf.Min(stamina, 10);
+        stamina = Mathf.Min(stamina, 10);
         if(stamina != 0)
         {
             if(stamina < visualStamina)
