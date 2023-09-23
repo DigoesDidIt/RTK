@@ -9,6 +9,8 @@ public class HealthManager : MonoBehaviour
     public float health;
     public AttackManager attackManager;
     public StaminaManager staminaManager;
+
+    public CameraController cameraController;
     private bool Invul;
     public bool blocking;
     public bool parry;
@@ -72,6 +74,8 @@ public class HealthManager : MonoBehaviour
             hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Stunned");
             attackManager.animator.SetBool("Parry", true);
             Variables.Object(hurtbox.transform.parent.transform.parent.gameObject).Set("Stunned", true);
+            transform.Find("Sparks").GetComponent<ParticleSystem>().Play();
+            cameraController.goalZOffset = 1.2f;
         }
 
         
@@ -83,9 +87,10 @@ public class HealthManager : MonoBehaviour
     }
     IEnumerator ParryTimer()
     {
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.45f);
         parry = false;
         attackManager.animator.SetBool("Parry", false);
+        cameraController.goalZOffset = 0;
 
     }
 }

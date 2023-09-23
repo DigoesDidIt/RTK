@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
     public GameObject player;
     public float direction;
     public float goalZOffset;
-    private float zOffset;
+    public float zOffset;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,11 +41,11 @@ public class CameraController : MonoBehaviour
         }
         if(goalZOffset > zOffset)
         {
-            zOffset += .02f;
+            zOffset += .1f;
         }
         if(goalZOffset < zOffset)
         {
-            zOffset -= .02f;
+            zOffset -= .1f;
         }
         transform.position = new Vector3(player.transform.position.x - (offset*3), player.transform.position.y + 3, player.transform.position.z - 10 - Mathf.Abs(offset) + zOffset);
         //print("offset = " + offset +". direction is "+ direction + ". Target is " + targetOffset);
