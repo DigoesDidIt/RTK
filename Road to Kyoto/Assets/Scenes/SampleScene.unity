@@ -807,6 +807,7 @@ MonoBehaviour:
   direction: 0
   goalZOffset: 0
   zOffset: 0
+  freeze: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -14362,6 +14363,7 @@ MonoBehaviour:
   staminaManager: {fileID: 1487687803}
   cameraController: {fileID: 519420030}
   blocking: 0
+  perfectParry: 0
   parry: 0
 --- !u!114 &1487687803
 MonoBehaviour:
@@ -14397,6 +14399,7 @@ GameObject:
   - component: {fileID: 1571328860}
   - component: {fileID: 1571328862}
   - component: {fileID: 1571328859}
+  - component: {fileID: 1571328863}
   m_Layer: 0
   m_Name: Novice Swordsman
   m_TagString: Untagged
@@ -14473,6 +14476,7 @@ MonoBehaviour:
   staminaManager: {fileID: 0}
   cameraController: {fileID: 0}
   blocking: 0
+  perfectParry: 0
   parry: 0
 --- !u!114 &1571328859
 MonoBehaviour:
@@ -14518,7 +14522,7 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Distance
       to Player","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"Health","value":{"$content":1.0,"$type":"System.Single"},"$version":"A"},{"name":"Direction","value":{"$content":0,"$type":"System.Int32"},"$version":"A"},{"name":"Can
-      Walk","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"},{"name":"Stunned","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      Walk","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"},{"name":"Stunned","value":{"$content":0.0,"$type":"System.Single"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!114 &1571328862
 MonoBehaviour:
@@ -14535,6 +14539,20 @@ MonoBehaviour:
   distanceToPlayer: 0
   canSeePlayer: 0
   player: {fileID: 1487687794}
+--- !u!114 &1571328863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571328854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40792afeb324b047bec6fed119547e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  blocking: 0
 --- !u!1 &1578048482
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     public float direction;
     public float goalZOffset;
     public float zOffset;
+    public bool freeze;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +44,7 @@ public class CameraController : MonoBehaviour
         {
             zOffset += .1f;
         }
-        if(goalZOffset < zOffset)
+        if(goalZOffset < zOffset && !freeze)
         {
             zOffset -= .1f;
         }

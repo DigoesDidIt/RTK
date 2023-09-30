@@ -13,6 +13,7 @@ public class HealthManager : MonoBehaviour
     public CameraController cameraController;
     private bool Invul;
     public bool blocking;
+    public bool perfectParry;
     public bool parry;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class HealthManager : MonoBehaviour
         
         if(attackManager.IsBlocking == true && !(blocking == true || parry == true))
         {
-            parry = true;
+            perfectParry = true;
             StartCoroutine(ParryTimer());
             blocking = true;
 
@@ -40,13 +41,13 @@ public class HealthManager : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D hurtbox) 
     {
-        if(hurtbox.gameObject.tag == "Light Attack" && Invul == false && blocking == false && !parry)
+        if(hurtbox.gameObject.tag == "Light Attack" && Invul == false && blocking == false && !parry && !perfectParry)
         {
             health -= 1;
             Invul = true;
             StartCoroutine(InvulFrames());
         }   
-        else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false && blocking == false && !parry)
+        else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false && blocking == false && !parry && !perfectParry)
         {
             health -= 1;
             Invul = true;
@@ -58,7 +59,7 @@ public class HealthManager : MonoBehaviour
             Invul = true;
             StartCoroutine(InvulFrames());
         }
-        else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && blocking && !parry)
+        else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && blocking && !parry && !perfectParry)
         {
             staminaManager.UseStamina(2f);
             hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Blocked");
@@ -68,17 +69,24 @@ public class HealthManager : MonoBehaviour
                 attackManager.IsBlocking = false;
             }
         }
-        else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack") && parry)
+        else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack") && perfectParry)
         {
             staminaManager.UseStamina(-2f);
             hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Stunned");
             attackManager.animator.SetBool("Parry", true);
-            Variables.Object(hurtbox.transform.parent.transform.parent.gameObject).Set("Stunned", true);
+            Variables.Object(hurtbox.transform.parent.transform.parent.gameObject).Set("Stunned", 2.5f);
             transform.Find("Sparks").GetComponent<ParticleSystem>().Play();
             cameraController.goalZOffset = 1.2f;
+            cameraController.freeze = true;
+        }
+        else if ((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack") && parry)
+        {
+            hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Stunned");
+            attackManager.animator.SetBool("Parry", true);
+            Variables.Object(hurtbox.transform.parent.transform.parent.gameObject).Set("Stunned", 1.5f);
         }
 
-        
+
     }
     IEnumerator InvulFrames()
     {
@@ -87,10 +95,15 @@ public class HealthManager : MonoBehaviour
     }
     IEnumerator ParryTimer()
     {
-        yield return new WaitForSeconds(.45f);
-        parry = false;
+        yield return new WaitForSeconds(.1f);
+        perfectParry = false;
+        parry = true;
+        yield return new WaitForSeconds(.35f);
         attackManager.animator.SetBool("Parry", false);
+        parry = false;
+        yield return new WaitForSeconds(2.05f);
         cameraController.goalZOffset = 0;
+        cameraController.freeze = false;
 
     }
 }
