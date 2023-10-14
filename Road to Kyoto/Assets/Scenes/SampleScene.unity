@@ -14522,7 +14522,7 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Distance
       to Player","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"Health","value":{"$content":1.0,"$type":"System.Single"},"$version":"A"},{"name":"Direction","value":{"$content":0,"$type":"System.Int32"},"$version":"A"},{"name":"Can
-      Walk","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"},{"name":"Stunned","value":{"$content":0.0,"$type":"System.Single"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      Walk","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"},{"name":"Stunned","value":{"$content":0.0,"$type":"System.Single"},"$version":"A"},{"name":"Type","value":{"$content":"Neutral","$type":"System.String"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!114 &1571328862
 MonoBehaviour:

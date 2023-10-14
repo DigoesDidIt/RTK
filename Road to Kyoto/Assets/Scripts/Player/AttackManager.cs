@@ -106,7 +106,7 @@ public class AttackManager : MonoBehaviour
         {
             attackQueue.Add("j");
         }
-        if (Input.GetKeyDown("k"))
+        if (Input.GetKeyDown("k") && staminaManager.stamina != 0)
         {
             IsChargingSpecial = false;
             IsSpecialReady = false;
@@ -145,7 +145,7 @@ public class AttackManager : MonoBehaviour
                 LightAttack();
                 attackQueue.RemoveAt(0);
             }
-            if(attackQueue[0] == "k" && !attacking)
+            else if(attackQueue[0] == "k" && !attacking)
             {
                 HeavyAttack();
                 attackQueue.RemoveAt(0);

@@ -18,7 +18,7 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -36,6 +36,7 @@ public class HealthManager : MonoBehaviour
         else if(attackManager.IsBlocking == false)
         {
             parry = false;
+            perfectParry = false;
             blocking = false;
         }
     }
@@ -78,6 +79,7 @@ public class HealthManager : MonoBehaviour
             transform.Find("Sparks").GetComponent<ParticleSystem>().Play();
             cameraController.goalZOffset = 1.2f;
             cameraController.freeze = true;
+            StartCoroutine(PerfectParry());
         }
         else if ((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack") && parry)
         {
@@ -101,9 +103,11 @@ public class HealthManager : MonoBehaviour
         yield return new WaitForSeconds(.35f);
         attackManager.animator.SetBool("Parry", false);
         parry = false;
-        yield return new WaitForSeconds(2.05f);
+    }
+    IEnumerator PerfectParry()
+    {
+        yield return new WaitForSeconds(2.5f);
         cameraController.goalZOffset = 0;
         cameraController.freeze = false;
-
     }
 }
