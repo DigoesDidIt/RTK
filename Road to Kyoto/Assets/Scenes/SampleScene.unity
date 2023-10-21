@@ -14394,7 +14394,6 @@ GameObject:
   - component: {fileID: 1571328857}
   - component: {fileID: 1571328856}
   - component: {fileID: 1571328855}
-  - component: {fileID: 1571328858}
   - component: {fileID: 1571328861}
   - component: {fileID: 1571328860}
   - component: {fileID: 1571328862}
@@ -14459,25 +14458,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1571328858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571328854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f557823b35294b95a1ef44c43339e1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  attackManager: {fileID: 1487687801}
-  staminaManager: {fileID: 0}
-  cameraController: {fileID: 0}
-  blocking: 0
-  perfectParry: 0
-  parry: 0
 --- !u!114 &1571328859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14551,7 +14531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40792afeb324b047bec6fed119547e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 3
   blocking: 0
 --- !u!1 &1578048482
 GameObject:

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Bolt;
 using Ludiq;
-
+//[IncludeInSettings(true)];
 public class EnemyHealthManager : MonoBehaviour
 {
     public float health;
