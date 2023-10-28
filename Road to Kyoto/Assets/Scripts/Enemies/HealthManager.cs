@@ -70,7 +70,7 @@ public class HealthManager : MonoBehaviour
                 attackManager.IsBlocking = false;
             }
         }
-        else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack") && perfectParry)
+        else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && perfectParry)
         {
             staminaManager.UseStamina(-2f);
             hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Stunned");
@@ -81,7 +81,7 @@ public class HealthManager : MonoBehaviour
             cameraController.freeze = true;
             StartCoroutine(PerfectParry());
         }
-        else if ((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack") && parry)
+        else if ((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && parry)
         {
             hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Stunned");
             attackManager.animator.SetBool("Parry", true);

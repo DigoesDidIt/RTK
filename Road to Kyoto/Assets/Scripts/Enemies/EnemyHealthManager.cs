@@ -19,6 +19,7 @@ public class EnemyHealthManager : MonoBehaviour
     void Update()
     {
         Variables.Object(gameObject).Set("Health", health);
+        blocking = transform.GetChild(0).GetComponent<Animator>().GetBool("Blocking");
     }
     void OnTriggerEnter2D(Collider2D hurtbox) 
     {

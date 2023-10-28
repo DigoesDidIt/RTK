@@ -253,6 +253,78 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &171213191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 171213192}
+  - component: {fileID: 171213193}
+  m_Layer: 0
+  m_Name: Point Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &171213192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171213191}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 327299105}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &171213193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171213191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Intensity: 2
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 0.48485318
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1001 &192460232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13058,7 +13130,7 @@ GameObject:
   - component: {fileID: 1070903267}
   m_Layer: 0
   m_Name: EnemyHurtbox
-  m_TagString: Heavy Attack
+  m_TagString: Light Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13267,6 +13339,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7060459091422113862, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9984956
+      objectReference: {fileID: 0}
+    - target: {fileID: -7060459091422113862, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000038266472
+      objectReference: {fileID: 0}
     - target: {fileID: -6695223167489311394, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
       propertyPath: m_SortingOrder
       value: 11
@@ -13290,6 +13370,14 @@ PrefabInstance:
     - target: {fileID: -4177509753569725118, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4177509753569725118, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.16890281
+      objectReference: {fileID: 0}
+    - target: {fileID: -4177509753569725118, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2773738
       objectReference: {fileID: 0}
     - target: {fileID: -3781985402981607905, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
       propertyPath: m_LocalRotation.x
