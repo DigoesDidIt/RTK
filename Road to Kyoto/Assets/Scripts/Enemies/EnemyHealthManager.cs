@@ -19,7 +19,7 @@ public class EnemyHealthManager : MonoBehaviour
     void Update()
     {
         Variables.Object(gameObject).Set("Health", health);
-        blocking = transform.GetChild(0).GetComponent<Animator>().GetBool("Blocking");
+        blocking = transform.GetChild(0).GetComponent<Animator>().GetBool("Blocking");;
     }
     void OnTriggerEnter2D(Collider2D hurtbox) 
     {
@@ -40,6 +40,10 @@ public class EnemyHealthManager : MonoBehaviour
             health -= 1;
             Invul = true;
             StartCoroutine(InvulFrames());
+        }
+        else if((hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Light Attack") && blocking)
+        {
+            hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Blocked");
         }
     }
     IEnumerator InvulFrames()
