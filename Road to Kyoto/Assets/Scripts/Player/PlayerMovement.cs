@@ -122,6 +122,18 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(DodgeDelay());
 
         }
+        Vector2 headHeight = new Vector2(transform.position.x+.5f,transform.position.y+1.5f);
+        RaycastHit2D combatCheck = Physics2D.Raycast(headHeight, Vector2.right,3f);
+        Debug.DrawRay(headHeight, Vector2.right, Color.cyan, 3f);
+        Debug.Log(combatCheck.collider.tag);
+        if(combatCheck.collider.tag == "Enemy")
+        {
+            inCombat = true;
+        }
+        else
+        {
+            inCombat = false;
+        }
         animator.SetBool("InCombat", inCombat);
 
     }
