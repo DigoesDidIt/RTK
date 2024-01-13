@@ -172,7 +172,7 @@ public class AttackManager : MonoBehaviour
 
     IEnumerator Light1Delay()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.4f);
         attacking = false;
     }
     IEnumerator SlashDelay()
@@ -197,7 +197,7 @@ public class AttackManager : MonoBehaviour
     }
     IEnumerator HeavyDelay()
     {
-        yield return new WaitForSeconds(.8f);
+        yield return new WaitForSeconds(.6f);
         attacking = false;
     }
     IEnumerator ChargeDelay()
