@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        
+        Physics2D.IgnoreLayerCollision(0, 10);
     }
 
     // Update is called once per frame

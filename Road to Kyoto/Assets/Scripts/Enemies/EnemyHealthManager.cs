@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Bolt;
 using Ludiq;
+using UnityEngine.UI;
 //[IncludeInSettings(true)];
 public class EnemyHealthManager : MonoBehaviour
 {
     public float health;
     private bool Invul;
     public bool blocking;
+    public Slider blockSlider;
 
     public int blockMeter;
     // Start is called before the first frame update
@@ -21,25 +23,33 @@ public class EnemyHealthManager : MonoBehaviour
     void Update()
     {
         Variables.Object(gameObject).Set("Health", health);
-        blocking = transform.GetChild(0).GetComponent<Animator>().GetBool("Blocking");;
+        blocking = transform.GetChild(0).GetComponent<Animator>().GetBool("Blocking");
+        blockSlider.value = blockMeter;
+    }
+    void FixedUpdate()
+    {
+        transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", false);
     }
     void OnTriggerEnter2D(Collider2D hurtbox) 
     {
         if(hurtbox.gameObject.tag == "Light Attack" && Invul == false && (blocking == false || blockMeter == 0))
         {
             health -= 1;
+            transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", true);
             Invul = true;
             StartCoroutine(InvulFrames());
         }   
         else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false && (blocking == false || blockMeter == 0))
         {
             health -= 1;
+            transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", true);
             Invul = true;
             StartCoroutine(InvulFrames());
         }
         else if (hurtbox.gameObject.tag == "Special Attack" && Invul == false)
         {
             health -= 1;
+            transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Hit", true);
             Invul = true;
             StartCoroutine(InvulFrames());
         }
