@@ -8,7 +8,7 @@ public class Enemy
     private int enemyTier;
     private int enemyHealth;
     private int enemyBlock;
-    public Enemy(String type, int tier)
+    public Enemy(string type, int tier)
     {
         this.enemyType = type;
         this.enemyTier = tier;
