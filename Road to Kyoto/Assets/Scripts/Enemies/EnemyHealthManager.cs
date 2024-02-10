@@ -7,16 +7,17 @@ using UnityEngine.UI;
 //[IncludeInSettings(true)];
 public class EnemyHealthManager : MonoBehaviour
 {
-    public float health;
+    private float health;
     private bool Invul;
     public bool blocking;
     public Slider blockSlider;
 
-    public int blockMeter;
+    private int blockMeter;
+    private int blockMax;
     // Start is called before the first frame update
     void Start()
     {
-        blockMeter = 4;
+        
     }
 
     // Update is called once per frame
@@ -25,6 +26,10 @@ public class EnemyHealthManager : MonoBehaviour
         Variables.Object(gameObject).Set("Health", health);
         blocking = transform.GetChild(0).GetComponent<Animator>().GetBool("Blocking");
         blockSlider.value = blockMeter;
+        if(health <= 0 &&  GetComponent<LOSManager>().eque.combatants.Contains(GetComponent<EnemyBehaviorManager>().getEnemy()))
+        {
+            GetComponent<LOSManager>().eque.combatants.Remove(GetComponent<EnemyBehaviorManager>().getEnemy());
+        }
     }
     void FixedUpdate()
     {
@@ -71,6 +76,16 @@ public class EnemyHealthManager : MonoBehaviour
             hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Blocked");
         }
     }
+    public void setHealth(int h)
+    {
+        health = h;
+    }
+    public void setBlock(int b)
+    {
+        blockMax = b;
+        blockMeter = b;
+        blockSlider.maxValue = b;
+    }
     IEnumerator InvulFrames()
     {
         yield return new WaitForSeconds(.25f);
@@ -79,6 +94,6 @@ public class EnemyHealthManager : MonoBehaviour
     IEnumerator BlockRegen()
     {
         yield return new WaitForSeconds(2);
-        blockMeter = 4;
+        blockMeter = blockMax;
     }
 }

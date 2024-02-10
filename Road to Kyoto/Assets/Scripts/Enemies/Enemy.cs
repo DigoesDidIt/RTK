@@ -8,6 +8,7 @@ public class Enemy
     private int enemyTier;
     private int enemyHealth;
     private int enemyBlock;
+    private bool activated = false;
     public Enemy(string type, int tier)
     {
         this.enemyType = type;
@@ -20,7 +21,13 @@ public class Enemy
                     enemyHealth = 3;
                     enemyBlock = 4;
                 }
+                else if(tier == 2)
+                {
+                    enemyHealth = 4;
+                    enemyBlock = 6;
+                }
                 break;
+                
             default: //unemployed
                 break;
         }
@@ -35,5 +42,21 @@ public class Enemy
     void Update()
     {
         
+    }
+    public int getHealth()
+    {
+        return enemyHealth;
+    }
+    public int getBlock()
+    {
+        return enemyBlock;
+    }
+    public bool getActive()
+    {
+        return activated;
+    }
+    public void setActive()
+    {
+        activated = true;
     }
 }
