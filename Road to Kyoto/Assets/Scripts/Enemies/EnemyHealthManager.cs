@@ -26,9 +26,14 @@ public class EnemyHealthManager : MonoBehaviour
         Variables.Object(gameObject).Set("Health", health);
         blocking = transform.GetChild(0).GetComponent<Animator>().GetBool("Blocking");
         blockSlider.value = blockMeter;
-        if(health <= 0 &&  GetComponent<LOSManager>().eque.combatants.Contains(GetComponent<EnemyBehaviorManager>().getEnemy()))
+        if(health <= 0)
         {
-            GetComponent<LOSManager>().eque.combatants.Remove(GetComponent<EnemyBehaviorManager>().getEnemy());
+            GetComponent<EnemyBehaviorManager>().setActive(false);   
+            blockSlider.transform.parent.gameObject.SetActive(false);
+            if(GetComponent<LOSManager>().eque.combatants.Contains(GetComponent<EnemyBehaviorManager>().getEnemy()))
+            {
+                GetComponent<LOSManager>().eque.combatants.Remove(GetComponent<EnemyBehaviorManager>().getEnemy());
+            }
         }
     }
     void FixedUpdate()

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,8 +22,8 @@ public class EnemyQueueSystem : MonoBehaviour
     {
         if(!MapActive(combatants).Contains(true))
         {
-            int i = UnityEngine.Random.Range(0,1);
-            combatants[i].setActive();
+            int i = UnityEngine.Random.Range(0,combatants.Count);
+            combatants[i].setActive(true);  
         }
     }
     List<bool> MapActive(List<Enemy> enemyList)

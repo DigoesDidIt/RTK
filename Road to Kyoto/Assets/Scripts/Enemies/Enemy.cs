@@ -55,8 +55,8 @@ public class Enemy
     {
         return activated;
     }
-    public void setActive()
+    public void setActive(bool b)
     {
-        activated = true;
+        activated = b;
     }
 }
