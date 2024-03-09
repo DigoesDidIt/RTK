@@ -11,6 +11,7 @@ public class EnemyBehaviorManager : MonoBehaviour
     public int tier;
     public bool active;
     public bool waiting;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class EnemyBehaviorManager : MonoBehaviour
             waiting = true;
             StartCoroutine(activeTimer());
         }
+        Variables.Object(gameObject).Set("Hover Distance", self.getHoverDist());
     }
     public Enemy getEnemy()
     {

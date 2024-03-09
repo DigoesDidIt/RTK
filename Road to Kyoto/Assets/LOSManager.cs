@@ -13,7 +13,8 @@ public class LOSManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player");
+        eque = GameObject.Find("Enemy Controller").GetComponent<EnemyQueueSystem>();
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class LOSManager : MonoBehaviour
         if(distanceToPlayer < 5 && !eque.combatants.Contains(GetComponent<EnemyBehaviorManager>().getEnemy()))
         {
             eque.combatants.Add(GetComponent<EnemyBehaviorManager>().getEnemy());
+            eque.setHoverDistances();
         }
     }
 }

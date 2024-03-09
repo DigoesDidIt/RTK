@@ -9,6 +9,7 @@ public class Enemy
     private int enemyHealth;
     private int enemyBlock;
     private bool activated = false;
+    private float hoverDist = 4;
     public Enemy(string type, int tier)
     {
         this.enemyType = type;
@@ -58,5 +59,13 @@ public class Enemy
     public void setActive(bool b)
     {
         activated = b;
+    }
+    public void setHoverDist(float f)
+    {
+        hoverDist = f;
+    }
+    public float getHoverDist()
+    {
+        return hoverDist;
     }
 }

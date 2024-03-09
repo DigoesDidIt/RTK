@@ -6,6 +6,8 @@ using UnityEngine;
 public class EnemyQueueSystem : MonoBehaviour
 {
     public List<Enemy> combatants = new List<Enemy>();
+    private float hoverStart = 4;
+    private float hoverEnd = 7;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,8 @@ public class EnemyQueueSystem : MonoBehaviour
         if(!MapActive(combatants).Contains(true))
         {
             int i = UnityEngine.Random.Range(0,combatants.Count);
-            combatants[i].setActive(true);  
+            combatants[i].setActive(true); 
+            setHoverDistances();
         }
     }
     List<bool> MapActive(List<Enemy> enemyList)
@@ -34,5 +37,29 @@ public class EnemyQueueSystem : MonoBehaviour
             list.Add(e.getActive());
         }
         return list;
+    }
+    int TotalNonCombatants(List<Enemy> enemyList)
+    {
+        int total = 0;
+        foreach(Enemy e in enemyList)
+        {
+            if(!e.getActive())
+            {
+                total++;
+            }
+        }
+        return total;
+    }
+    public void setHoverDistances()
+    {
+        float  spacing = 0;
+        foreach(Enemy e in combatants)
+        {
+            if(!e.getActive())
+            {
+                e.setHoverDist(hoverStart + spacing);
+                spacing += (hoverEnd-hoverStart)/TotalNonCombatants(combatants);
+            }
+        }
     }
 }
