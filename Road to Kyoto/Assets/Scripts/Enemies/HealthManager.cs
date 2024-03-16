@@ -9,6 +9,7 @@ public class HealthManager : MonoBehaviour
     public float health;
     public AttackManager attackManager;
     public StaminaManager staminaManager;
+    public PlayerMovement playermovement;
 
     public CameraController cameraController;
     private bool Invul;
@@ -24,7 +25,7 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Variables.Object(gameObject).Set("Health", health);
+        //Variables.Object(gameObject).Set("Health", health);
         
         if(attackManager.IsBlocking == true && !(blocking == true || parry == true))
         {
@@ -39,6 +40,7 @@ public class HealthManager : MonoBehaviour
             perfectParry = false;
             blocking = false;
         }
+        
     }
     void OnTriggerEnter2D(Collider2D hurtbox) 
     {
@@ -87,8 +89,17 @@ public class HealthManager : MonoBehaviour
             attackManager.animator.SetBool("Parry", true);
             Variables.Object(hurtbox.transform.parent.transform.parent.gameObject).Set("Stunned", 1.5f);
         }
+        if(health<=0)
+        {
+            death();
+        }
 
 
+    }
+    void death()
+    {
+        playermovement.canMove = false;
+        attackManager.animator.SetTrigger("Death");
     }
     IEnumerator InvulFrames()
     {
