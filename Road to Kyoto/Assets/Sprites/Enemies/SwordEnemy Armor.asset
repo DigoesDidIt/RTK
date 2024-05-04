@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: SwordEnemy Armor
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Helmets
+    m_Hash: -344171868
+    m_CategoryList:
+    - m_Name: Novice
+      m_Hash: -441939841
+      m_Sprite: {fileID: 5845732588338853869, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+    - m_Name: Adept
+      m_Hash: 566109096
+      m_Sprite: {fileID: 5477964887999569984, guid: 153ecb147b70bd14cb6596d3fb54e9fa, type: 3}
+  - m_Name: Body - Upper
+    m_Hash: -643734333
+    m_CategoryList:
+    - m_Name: Novice
+      m_Hash: -441939841
+      m_Sprite: {fileID: -1940792697697877988, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+    - m_Name: Adept
+      m_Hash: 566109096
+      m_Sprite: {fileID: 271509877145207773, guid: 153ecb147b70bd14cb6596d3fb54e9fa, type: 3}
+  - m_Name: Body - Lower
+    m_Hash: -1184579460
+    m_CategoryList:
+    - m_Name: Novice
+      m_Hash: -441939841
+      m_Sprite: {fileID: -8935667776427312270, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+    - m_Name: Adept
+      m_Hash: 566109096
+      m_Sprite: {fileID: 6684023228591439765, guid: 153ecb147b70bd14cb6596d3fb54e9fa, type: 3}
+  - m_Name: Right Arm
+    m_Hash: 747450821
+    m_CategoryList:
+    - m_Name: Novice
+      m_Hash: -441939841
+      m_Sprite: {fileID: -3437917830600444635, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+    - m_Name: Adept
+      m_Hash: 566109096
+      m_Sprite: {fileID: -3993499268674386752, guid: 153ecb147b70bd14cb6596d3fb54e9fa, type: 3}
+  - m_Name: New Category
+    m_Hash: -1887952825
+    m_CategoryList:
+    - m_Name: Novice
+      m_Hash: -441939841
+      m_Sprite: {fileID: 1820968255019953838, guid: 7b74b0a1c1d52421290ad29dd1d5addb, type: 3}
+    - m_Name: Adept
+      m_Hash: 566109096
+      m_Sprite: {fileID: -8791537721751102750, guid: 153ecb147b70bd14cb6596d3fb54e9fa, type: 3}
