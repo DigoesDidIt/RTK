@@ -49,8 +49,8 @@ MonoBehaviour:
     - m_Name: Adept
       m_Hash: 566109096
       m_Sprite: {fileID: -3993499268674386752, guid: 153ecb147b70bd14cb6596d3fb54e9fa, type: 3}
-  - m_Name: New Category
-    m_Hash: -1887952825
+  - m_Name: Left Arm
+    m_Hash: -285110375
     m_CategoryList:
     - m_Name: Novice
       m_Hash: -441939841
