@@ -424,7 +424,8 @@ MonoBehaviour:
       Walk","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"},{"name":"Stunned","value":{"$content":0.0,"$type":"System.Single"},"$version":"A"},{"name":"Type","value":{"$content":"Neutral","$type":"System.String"},"$version":"A"},{"name":"Blocked","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"},{"name":"Tier","value":{"$content":0,"$type":"System.Int32"},"$version":"A"},{"name":"Max
       Hp","value":{"$content":0,"$type":"System.Int32"},"$version":"A"},{"name":"Active","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"},{"name":"Hover
       Distance","value":{"$content":0.0,"$type":"System.Single"},"$version":"A"},{"name":"Can
-      See Player","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      See Player","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"},{"name":"Towards
+      Player","value":{"$content":0.0,"$type":"System.Single"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!114 &4767991759371728066
 MonoBehaviour:
@@ -472,6 +473,7 @@ MonoBehaviour:
   canSeePlayer: 0
   player: {fileID: 0}
   eque: {fileID: 0}
+  towardsPlayer: 0
 --- !u!114 &4767991759371728069
 MonoBehaviour:
   m_ObjectHideFlags: 0
