@@ -93,6 +93,11 @@ public class EnemyHealthManager : MonoBehaviour
     }
     IEnumerator InvulFrames()
     {
+        if(health>0)
+        {
+            transform.GetChild(0).gameObject.GetComponent<Animator>().SetTrigger("Takes Hit");
+            Variables.Object(transform.gameObject).Set("Stunned", .2f);
+        }
         yield return new WaitForSeconds(.25f);
         Invul = false;
     }
