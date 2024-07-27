@@ -91,6 +91,10 @@ public class EnemyHealthManager : MonoBehaviour
         blockMeter = b;
         blockSlider.maxValue = b;
     }
+    public float getHealth()
+    {
+        return health;
+    }
     IEnumerator InvulFrames()
     {
         if(health>0)

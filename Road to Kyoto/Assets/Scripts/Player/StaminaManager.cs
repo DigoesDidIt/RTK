@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class StaminaManager : MonoBehaviour
 {
     public float stamina;
+    public float maxStamina;
+    public float regen;
+    public float delay;
     public float visualStamina;
     public bool canRegenTiredStamina;
     public bool isRegeningTiredStamina;
@@ -15,12 +18,17 @@ public class StaminaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stamina = 10;
+        maxStamina = 5f;
+        stamina = maxStamina;
+        visualStamina = maxStamina;
+        regen = 0.015f;
+        delay = 3;
         canRegenTiredStamina = false;
         canRegenStamina = true;
         cb = staminaslider.colors;
         cb.disabledColor = new Color(1f, 102f/255f, 102f/255f, 1);
         staminaslider.colors = cb;
+        staminaslider.maxValue = maxStamina;
     }
 
     // Update is called once per frame
@@ -33,20 +41,20 @@ public class StaminaManager : MonoBehaviour
         {
             if(stamina < visualStamina)
             {
-            visualStamina -= 0.08f;
+            visualStamina -=.08f;
             }
             if(stamina > visualStamina)
             {
-            visualStamina += 0.08f;
+            visualStamina += regen;
             }
             if(Mathf.Abs(stamina-visualStamina) <=.05)
             {
                 visualStamina = stamina;
             }
-            if (canRegenStamina && stamina <= 10)
+            if (canRegenStamina && stamina <= maxStamina)
             {
-                stamina += 0.05f;
-                stamina = Mathf.Min(stamina, 10);
+                stamina += regen;
+                stamina = Mathf.Min(stamina, maxStamina);
             }
         }
         else if(!isRegeningTiredStamina)
@@ -65,11 +73,11 @@ public class StaminaManager : MonoBehaviour
         }
         if(canRegenTiredStamina)
         {
-            visualStamina += 0.05f;
-            if(visualStamina >= 10)
+            visualStamina += regen;
+            if(visualStamina >= maxStamina)
             {
-                stamina = 10;
-                visualStamina = 10;
+                stamina = maxStamina;
+                visualStamina = maxStamina;
                 cb.disabledColor = new Color(255f/255f, 102f/255f, 102f/255f, 1);
                 staminaslider.colors = cb;
                 isRegeningTiredStamina = false;
@@ -95,7 +103,7 @@ public class StaminaManager : MonoBehaviour
     }
     IEnumerator StaminaRegenDelay(float previousStamina)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(delay);
         if (stamina == previousStamina)
         {
             canRegenStamina = true;

@@ -123,10 +123,19 @@ public class PlayerMovement : MonoBehaviour
 
         }
         Vector2 headHeight = new Vector2(transform.position.x+.5f,transform.position.y+1.5f);
-        RaycastHit2D combatCheck = Physics2D.Raycast(headHeight, Vector2.right,6f,LayerMask.GetMask("Enemy"));
+        Vector2 direc;
+        if(transform.localScale.x >= 0)
+        {
+            direc = Vector2.right;
+        }
+        else
+        {
+            direc = Vector2.left;
+        }
+        RaycastHit2D combatCheck = Physics2D.Raycast(headHeight, direc, 6f, LayerMask.GetMask("Enemy"));
         Debug.DrawRay(headHeight, Vector2.right, Color.cyan, 6f);
         //Debug.Log(combatCheck.collider.tag);
-        if(combatCheck.collider != null && combatCheck.collider.tag == "Enemy")
+        if(combatCheck.collider != null && (combatCheck.collider.tag == "Enemy" || combatCheck.collider.tag == "Heavy Attack" || combatCheck.collider.tag == "Light Attack"))
         {
             inCombat = true;
         }
