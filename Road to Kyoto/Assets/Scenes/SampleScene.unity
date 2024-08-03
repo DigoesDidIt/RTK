@@ -21895,7 +21895,10 @@ MonoBehaviour:
   blocking: 0
   canMove: 1
   staminaManager: {fileID: 1487687803}
+  EnemiesLeft: 0
+  EnemiesRight: 0
   inCombat: 0
+  facing: 0
 --- !u!95 &1487687800
 Animator:
   serializedVersion: 3
@@ -21992,6 +21995,10 @@ PrefabInstance:
     - target: {fileID: 4767991758523688470, guid: f82b7d0db475d8f4e962744c94c01936, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767991759371728069, guid: f82b7d0db475d8f4e962744c94c01936, type: 3}
+      propertyPath: type
+      value: Spearman
       objectReference: {fileID: 0}
     - target: {fileID: 4767991759371728071, guid: f82b7d0db475d8f4e962744c94c01936, type: 3}
       propertyPath: m_LocalPosition.x

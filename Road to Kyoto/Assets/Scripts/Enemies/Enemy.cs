@@ -28,8 +28,21 @@ public class Enemy
                     enemyBlock = 6;
                 }
                 break;
-                
+            case "Spearman":
+                if(tier == 1)
+                {
+                    enemyHealth = 3;
+                    enemyBlock = 0;
+                }
+                else if(tier == 2)
+                {
+                    enemyHealth = 4;
+                    enemyBlock = 0;
+                }
+                break;                
             default: //unemployed
+                enemyHealth = 1;
+                enemyBlock = 0;
                 break;
         }
     }

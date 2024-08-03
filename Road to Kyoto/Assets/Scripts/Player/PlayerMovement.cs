@@ -19,7 +19,10 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove = true;
     private bool canDodge = true;
     public StaminaManager staminaManager;
+    public bool EnemiesLeft;
+    public bool EnemiesRight;
     public bool inCombat;
+    public int facing;
     // Start is called before the first frame update
     void Movement(float direction)
     {
@@ -55,29 +58,31 @@ public class PlayerMovement : MonoBehaviour
         {
             topspeed = 75f;
         }
-        if(currentspeed > topspeed && Input.GetAxisRaw("Run") == 1 && staminaManager.UseStamina(.0075f))
+        if(currentspeed > topspeed && Input.GetAxisRaw("Run") == 1 && staminaManager.UseStamina(.0075f)) //Caps running speed right
         {
             currentspeed = topspeed;
         }
-        if(currentspeed > 0.5f*topspeed && Input.GetAxisRaw("Run") == 0)
+        if(currentspeed > 0.5f*topspeed && Input.GetAxisRaw("Run") == 0) //caps walking speed right
         {
             currentspeed = 0.5f*topspeed;
         }
-        if (currentspeed < -1*topspeed && Input.GetAxisRaw("Run") == 1 && staminaManager.UseStamina(.0075f) && !inCombat)
+        if (currentspeed < -1*topspeed && Input.GetAxisRaw("Run") == 1 && staminaManager.UseStamina(.0075f) && !inCombat) // caps running speed lef
         {
             currentspeed = -1*topspeed;
         }
-        if (currentspeed < -0.5f*topspeed && Input.GetAxisRaw("Run") == 0)
+        if (currentspeed < -0.5f*topspeed && Input.GetAxisRaw("Run") == 0) // caps walking speed left
         {
             currentspeed = -0.5f*topspeed;
         }
-        if((currentspeed > 0  && (direction == 1))|| inCombat)
+        if((currentspeed > 0  && (direction == 1) && (!inCombat || (EnemiesLeft && EnemiesRight) ))|| (EnemiesRight && !EnemiesLeft))
         {
             transform.localScale = new Vector3(1,1,1);
+            facing = 1;
         }
-        else if(currentspeed < 0 && (direction == -1))
+        else if((currentspeed < 0 && (direction == -1) && (!inCombat || (EnemiesLeft && EnemiesRight) ))|| (EnemiesLeft && !EnemiesRight))
         {
             transform.localScale= new Vector3(-1, 1, 1);
+            facing = -1;
         }
         
     }
@@ -92,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
     {
         
         Movement(Input.GetAxisRaw("Horizontal"));
+        animator.SetInteger("Direction", facing);
         if(!attacking && canMove)
         {
             animator.SetFloat("Speed",currentspeed);
@@ -123,19 +129,26 @@ public class PlayerMovement : MonoBehaviour
 
         }
         Vector2 headHeight = new Vector2(transform.position.x+.5f,transform.position.y+1.5f);
-        Vector2 direc;
-        if(transform.localScale.x >= 0)
+        RaycastHit2D combatCheckRight = Physics2D.Raycast(headHeight, Vector2.right, 6f, LayerMask.GetMask("Enemy"));
+        RaycastHit2D combatCheckLeft = Physics2D.Raycast(headHeight, Vector2.left, 6f, LayerMask.GetMask("Enemy"));
+        Debug.DrawRay(headHeight, Vector2.right, Color.cyan, 6f);
+        if(combatCheckRight.collider != null && (combatCheckRight.collider.tag == "Enemy" || combatCheckRight.collider.tag == "Heavy Attack" || combatCheckRight.collider.tag == "Light Attack"))
         {
-            direc = Vector2.right;
+            EnemiesRight = true;
         }
         else
         {
-            direc = Vector2.left;
+            EnemiesRight = false;
         }
-        RaycastHit2D combatCheck = Physics2D.Raycast(headHeight, direc, 6f, LayerMask.GetMask("Enemy"));
-        Debug.DrawRay(headHeight, Vector2.right, Color.cyan, 6f);
-        //Debug.Log(combatCheck.collider.tag);
-        if(combatCheck.collider != null && (combatCheck.collider.tag == "Enemy" || combatCheck.collider.tag == "Heavy Attack" || combatCheck.collider.tag == "Light Attack"))
+        if(combatCheckLeft.collider != null && (combatCheckLeft.collider.tag == "Enemy" || combatCheckLeft.collider.tag == "Heavy Attack" || combatCheckLeft.collider.tag == "Light Attack"))
+        {
+            EnemiesLeft = true;
+        }
+        else
+        {
+            EnemiesLeft = false;
+        }
+        if(EnemiesLeft || EnemiesRight)
         {
             inCombat = true;
         }

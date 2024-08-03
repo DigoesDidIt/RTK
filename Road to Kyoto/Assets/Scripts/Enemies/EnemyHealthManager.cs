@@ -13,11 +13,14 @@ public class EnemyHealthManager : MonoBehaviour
     public Slider blockSlider;
 
     private int blockMeter;
-    private int blockMax;
+    public int blockMax;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(blockMax == 0)
+        {
+            blockSlider.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
