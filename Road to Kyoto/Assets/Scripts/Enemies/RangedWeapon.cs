@@ -1,0 +1,22 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RangedWeapon : Weapon
+{
+    // Start is called before the first frame update
+    public RangedWeapon(float damage, bool blockable) : base(damage, 6, blockable)
+    {
+      return;
+    }
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

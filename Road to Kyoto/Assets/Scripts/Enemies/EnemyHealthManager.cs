@@ -12,12 +12,15 @@ public class EnemyHealthManager : MonoBehaviour
     public bool blocking;
     public Slider blockSlider;
 
+    public EnemyBehaviorManager enemyBehaviorManager;
+
     private int blockMeter;
     public int blockMax;
     // Start is called before the first frame update
     void Start()
     {
-        if(blockMax == 0)
+        enemyBehaviorManager = GetComponent<EnemyBehaviorManager>();
+        if(enemyBehaviorManager.getEnemy().getBlock() == 0)
         {
             blockSlider.gameObject.SetActive(false);
         }

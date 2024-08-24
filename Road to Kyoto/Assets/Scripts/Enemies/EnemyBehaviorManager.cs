@@ -13,7 +13,7 @@ public class EnemyBehaviorManager : MonoBehaviour
     public bool waiting;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         self = new Enemy(type,tier);
         GetComponent<EnemyHealthManager>().setHealth(self.getHealth());

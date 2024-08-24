@@ -10,6 +10,7 @@ public class Enemy
     private int enemyBlock;
     private bool activated = false;
     private float hoverDist = 4;
+    private Weapon weapon;
     public Enemy(string type, int tier)
     {
         this.enemyType = type;
@@ -17,6 +18,7 @@ public class Enemy
         switch (enemyType)
         {
             case "Swordsman":
+                weapon = new Weapon();
                 if(tier == 1)
                 {
                     enemyHealth = 3;
@@ -29,6 +31,7 @@ public class Enemy
                 }
                 break;
             case "Spearman":
+                weapon = new Weapon(1, 2.5, false);
                 if(tier == 1)
                 {
                     enemyHealth = 3;
@@ -56,6 +59,10 @@ public class Enemy
     void Update()
     {
         
+    }
+    public string getType()
+    {
+        return enemyType + enemyTier;
     }
     public int getHealth()
     {

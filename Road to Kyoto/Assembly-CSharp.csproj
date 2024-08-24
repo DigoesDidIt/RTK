@@ -52,6 +52,8 @@
      <Compile Include="Assets\Scripts\Enviroment\OutsideLayerManager.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyHealthManager.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Weapon.cs" />
+     <Compile Include="Assets\Scripts\Enemies\RangedWeapon.cs" />
      <None Include="Assets\Bolt\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
      <None Include="Assets\Bolt\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Engine.xml" />
      <None Include="Assets\Bolt\Ludiq\Assemblies\Bolt.State.Runtime.xml" />
