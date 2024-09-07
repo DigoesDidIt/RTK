@@ -20,6 +20,7 @@ public class EnemyBehaviorManager : MonoBehaviour
         GetComponent<EnemyHealthManager>().setBlock(self.getBlock());
         Variables.Object(gameObject).Set("Tier", tier);
         Variables.Object(gameObject).Set("Max Hp", self.getHealth());
+        Variables.Object(gameObject).Set("Engagement Range", self.getWeapon().getEngagementRange());
 
     }
 

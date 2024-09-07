@@ -43,28 +43,32 @@ public class HealthManager : MonoBehaviour
         
     }
     void OnTriggerEnter2D(Collider2D hurtbox) 
-    {
-        if(hurtbox.gameObject.tag == "Light Attack" && Invul == false && blocking == false && !parry && !perfectParry)
+    {   if(hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack")
         {
-            health -= 1;
+            Weapon weapon = hurtbox.transform.parent.parent.gameObject.GetComponent<EnemyBehaviorManager>().getEnemy().getWeapon(); //CHECK THIS CODE
+        }
+
+        if (hurtbox.gameObject.tag == "Light Attack" && Invul == false && (!blocking || weapon.getBlockable()) && !parry && !perfectParry )
+        {
+            health -= weapon.getDamage();
             Invul = true;
             StartCoroutine(InvulFrames());
         }   
-        else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false && blocking == false && !parry && !perfectParry)
+        else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false && (!blocking || weapon.getBlockable()) && !parry && !perfectParry)
         {
-            health -= 1;
+            health -= weapon.getDamage(); 
             Invul = true;
             StartCoroutine(InvulFrames());
         }
         else if (hurtbox.gameObject.tag == "Special Attack" && Invul == false && !parry)
         {
-            health -= 1;
+            health -= weapon.getDamage();
             Invul = true;
             StartCoroutine(InvulFrames());
         }
         else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && blocking && !parry && !perfectParry)
         {
-            staminaManager.UseStamina(2f);
+            staminaManager.UseStamina(.5f);
             hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Blocked");
             if(staminaManager.stamina <= 0)
             {

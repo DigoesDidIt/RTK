@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    private float damage = 1;
-    private float engagementRange = 1.5;
+    private float damage = 1f;
+    private float engagementRange = 1.5f;
     private bool blockable = true;
     // Start is called before the first frame update
     public Weapon()
@@ -45,7 +45,7 @@ public class Weapon : MonoBehaviour
     {
         return engagementRange;
     }
-    public float getBlockable()
+    public bool getBlockable()
     {
         return blockable;
     }

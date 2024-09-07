@@ -31,7 +31,7 @@ public class Enemy
                 }
                 break;
             case "Spearman":
-                weapon = new Weapon(1, 2.5, false);
+                weapon = new Weapon(1f, 2.5f, false);
                 if(tier == 1)
                 {
                     enemyHealth = 3;
@@ -87,5 +87,9 @@ public class Enemy
     public float getHoverDist()
     {
         return hoverDist;
+    }
+    public Weapon getWeapon()
+    {
+        return weapon;
     }
 }
