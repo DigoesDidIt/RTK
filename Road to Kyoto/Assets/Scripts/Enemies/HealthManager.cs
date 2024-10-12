@@ -46,52 +46,51 @@ public class HealthManager : MonoBehaviour
     {   if(hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack")
         {
             Weapon weapon = hurtbox.transform.parent.parent.gameObject.GetComponent<EnemyBehaviorManager>().getEnemy().getWeapon(); //CHECK THIS CODE
-        }
-
-        if (hurtbox.gameObject.tag == "Light Attack" && Invul == false && (!blocking || weapon.getBlockable()) && !parry && !perfectParry )
-        {
-            health -= weapon.getDamage();
-            Invul = true;
-            StartCoroutine(InvulFrames());
-        }   
-        else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false && (!blocking || weapon.getBlockable()) && !parry && !perfectParry)
-        {
-            health -= weapon.getDamage(); 
-            Invul = true;
-            StartCoroutine(InvulFrames());
-        }
-        else if (hurtbox.gameObject.tag == "Special Attack" && Invul == false && !parry)
-        {
-            health -= weapon.getDamage();
-            Invul = true;
-            StartCoroutine(InvulFrames());
-        }
-        else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && blocking && !parry && !perfectParry)
-        {
-            staminaManager.UseStamina(.5f);
-            hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Blocked");
-            if(staminaManager.stamina <= 0)
+            if (hurtbox.gameObject.tag == "Light Attack" && Invul == false && (!blocking || weapon.getBlockable()) && !parry && !perfectParry )
             {
-                attackManager.animator.SetTrigger("BlockBreak");
-                attackManager.IsBlocking = false;
+                health -= weapon.getDamage();
+                Invul = true;
+                StartCoroutine(InvulFrames());
+            }   
+            else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false && (!blocking || weapon.getBlockable()) && !parry && !perfectParry)
+            {
+                health -= weapon.getDamage(); 
+                Invul = true;
+                StartCoroutine(InvulFrames());
             }
-        }
-        else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && perfectParry)
-        {
-            staminaManager.UseStamina(-2f);
-            hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Stunned");
-            attackManager.animator.SetBool("Parry", true);
-            Variables.Object(hurtbox.transform.parent.transform.parent.gameObject).Set("Stunned", 2.5f);
-            transform.Find("Sparks").GetComponent<ParticleSystem>().Play();
-            cameraController.goalZOffset = 1.2f;
-            cameraController.freeze = true;
-            StartCoroutine(PerfectParry());
-        }
-        else if ((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && parry)
-        {
-            hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Stunned");
-            attackManager.animator.SetBool("Parry", true);
-            Variables.Object(hurtbox.transform.parent.transform.parent.gameObject).Set("Stunned", 1.5f);
+            else if (hurtbox.gameObject.tag == "Special Attack" && Invul == false && !parry)
+            {
+                health -= weapon.getDamage();
+                Invul = true;
+                StartCoroutine(InvulFrames());
+            }
+            else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && blocking && !parry && !perfectParry)
+            {
+                staminaManager.UseStamina(.5f);
+                hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Blocked");
+                if(staminaManager.stamina <= 0)
+                {
+                    attackManager.animator.SetTrigger("BlockBreak");
+                    attackManager.IsBlocking = false;
+                }
+            }
+            else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && perfectParry)
+            {
+                staminaManager.UseStamina(-2f);
+                hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Stunned");
+                attackManager.animator.SetBool("Parry", true);
+                Variables.Object(hurtbox.transform.parent.transform.parent.gameObject).Set("Stunned", 2.5f);
+                transform.Find("Sparks").GetComponent<ParticleSystem>().Play();
+                cameraController.goalZOffset = 1.2f;
+                cameraController.freeze = true;
+                StartCoroutine(PerfectParry());
+            }
+            else if ((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && parry)
+            {
+                hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Stunned");
+                attackManager.animator.SetBool("Parry", true);
+                Variables.Object(hurtbox.transform.parent.transform.parent.gameObject).Set("Stunned", 1.5f);
+            }
         }
         if(health<=0)
         {

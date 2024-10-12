@@ -22,6 +22,9 @@ MonoBehaviour:
     - m_Name: Adept
       m_Hash: 566109096
       m_Sprite: {fileID: 5477964887999569984, guid: 153ecb147b70bd14cb6596d3fb54e9fa, type: 3}
+    - m_Name: Spear
+      m_Hash: 1583325607
+      m_Sprite: {fileID: 2845360313057854491, guid: eea4d11dcd9aa3546bf041764c0fbd19, type: 3}
   - m_Name: Body - Upper
     m_Hash: -643734333
     m_CategoryList:
@@ -58,3 +61,12 @@ MonoBehaviour:
     - m_Name: Adept
       m_Hash: 566109096
       m_Sprite: {fileID: -8791537721751102750, guid: 153ecb147b70bd14cb6596d3fb54e9fa, type: 3}
+  - m_Name: Weapons
+    m_Hash: -1649180035
+    m_CategoryList:
+    - m_Name: Sword
+      m_Hash: 1529145355
+      m_Sprite: {fileID: -6224423585586836884, guid: 153ecb147b70bd14cb6596d3fb54e9fa, type: 3}
+    - m_Name: Spear
+      m_Hash: 1583325607
+      m_Sprite: {fileID: 1312446942149839682, guid: eea4d11dcd9aa3546bf041764c0fbd19, type: 3}
