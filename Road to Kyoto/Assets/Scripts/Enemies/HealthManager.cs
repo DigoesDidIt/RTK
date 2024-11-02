@@ -46,13 +46,13 @@ public class HealthManager : MonoBehaviour
     {   if(hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack")
         {
             Weapon weapon = hurtbox.transform.parent.parent.gameObject.GetComponent<EnemyBehaviorManager>().getEnemy().getWeapon(); //CHECK THIS CODE
-            if (hurtbox.gameObject.tag == "Light Attack" && Invul == false && (!blocking || weapon.getBlockable()) && !parry && !perfectParry )
+            if (hurtbox.gameObject.tag == "Light Attack" && Invul == false && (!blocking || !weapon.getBlockable()) && !parry && !perfectParry )
             {
                 health -= weapon.getDamage();
                 Invul = true;
                 StartCoroutine(InvulFrames());
             }   
-            else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false && (!blocking || weapon.getBlockable()) && !parry && !perfectParry)
+            else if(hurtbox.gameObject.tag == "Heavy Attack" && Invul == false && (!blocking || !weapon.getBlockable()) && !parry && !perfectParry)
             {
                 health -= weapon.getDamage(); 
                 Invul = true;
