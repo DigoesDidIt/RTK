@@ -21,6 +21,7 @@ public class EnemyBehaviorManager : MonoBehaviour
         Variables.Object(gameObject).Set("Tier", tier);
         Variables.Object(gameObject).Set("Max Hp", self.getHealth());
         Variables.Object(gameObject).Set("Engagement Range", self.getWeapon().getEngagementRange());
+        Variables.Object(gameObject).Set("Can Block", self.getWeapon().getCanBlock());
 
     }
 

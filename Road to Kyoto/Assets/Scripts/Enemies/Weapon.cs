@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     private float damage = 1f;
     private float engagementRange = 1.5f;
     private bool blockable = true;
+    private bool canBlock = true;
     // Start is called before the first frame update
     public Weapon()
     {
@@ -26,6 +27,13 @@ public class Weapon : MonoBehaviour
         this.damage = damage;
         this.engagementRange = engagementRange;
         this.blockable = blockable;
+    }
+    public Weapon(float damage, float engagementRange, bool blockable, bool canBlock)
+    {
+        this.damage = damage;
+        this.engagementRange = engagementRange;
+        this.blockable = blockable;
+        this.canBlock = canBlock;
     }
     void Start()
     {
@@ -48,5 +56,9 @@ public class Weapon : MonoBehaviour
     public bool getBlockable()
     {
         return blockable;
+    }
+    public bool getCanBlock()
+    {
+        return canBlock;
     }
 }

@@ -31,7 +31,7 @@ public class Enemy
                 }
                 break;
             case "Spearman":
-                weapon = new Weapon(1f, 2.5f, false);
+                weapon = new Weapon(1f, 2.25f, false, false);
                 if(tier == 1)
                 {
                     enemyHealth = 3;

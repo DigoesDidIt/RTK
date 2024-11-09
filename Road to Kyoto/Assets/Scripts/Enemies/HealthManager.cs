@@ -102,7 +102,7 @@ public class HealthManager : MonoBehaviour
     void death()
     {
         playermovement.canMove = false;
-        attackManager.animator.SetTrigger("Death");
+        attackManager.animator.SetBool("Death", true);
     }
     IEnumerator InvulFrames()
     {
