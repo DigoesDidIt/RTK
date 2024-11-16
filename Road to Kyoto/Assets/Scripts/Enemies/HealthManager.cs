@@ -19,7 +19,7 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        health = 5;
     }
 
     // Update is called once per frame
@@ -123,5 +123,9 @@ public class HealthManager : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         cameraController.goalZOffset = 0;
         cameraController.freeze = false;
+    }
+    public int getHealth()
+    {
+        return (int)health;
     }
 }

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: Health
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Icons
+    m_Hash: -877953158
+    m_CategoryList:
+    - m_Name: 5
+      m_Hash: -2068763730
+      m_Sprite: {fileID: 21300000, guid: 9c2569fadddb9184b98292a13f23ccac, type: 3}
+    - m_Name: 4
+      m_Hash: -206169288
+      m_Sprite: {fileID: 21300000, guid: 3342cccfdd03b114f88b8d61631672e2, type: 3}
+    - m_Name: 3
+      m_Hash: 1842515611
+      m_Sprite: {fileID: 21300000, guid: d914bb9e709ccc0478324c2938f46c79, type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: 21300000, guid: c690b41b9d406454183eccaef985a61d, type: 3}
+    - m_Name: 1
+      m_Hash: -2082672713
+      m_Sprite: {fileID: 21300000, guid: 6e8c49b4d65d160449c5d9fd75a9946c, type: 3}
+    - m_Name: Dead
+      m_Hash: 1293411866
+      m_Sprite: {fileID: 21300000, guid: 50b97479ae7c4e140971eac63217af32, type: 3}
