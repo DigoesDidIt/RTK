@@ -13,7 +13,11 @@ public class NodeController : MonoBehaviour
     {
         if(isStarter)
         {
-            var nextNode = Resources.Load("Nodes/Clearing") as GameObject;
+            var nodes = Resources.LoadAll("Nodes/General", typeof(GameObject));
+            Debug.Log(nodes);
+            var nextNode = (GameObject) nodes[Random.Range(0,nodes.Length)];
+
+            //var nextNode = Resources.Load("Nodes/General/Clearing") as GameObject;
             GameObject nodeObj = Instantiate(nextNode, transform.position, Quaternion.identity);
             nodeObj.GetComponent<NodeController>().Initialize(endingNode, children - 1);
         }
@@ -30,7 +34,10 @@ public class NodeController : MonoBehaviour
         transform.position = transform.position + end.transform.position - startingNode.transform.position;
         if(children > 0)
         {
-            var nextNode = Resources.Load("Nodes/Clearing") as GameObject;
+            var nodes = Resources.LoadAll("Nodes/General", typeof(GameObject));
+            Debug.Log(nodes);
+            var nextNode = (GameObject)nodes[Random.Range(0, nodes.Length)];
+
             GameObject nodeObj = Instantiate(nextNode, transform.position, Quaternion.identity);
             nodeObj.GetComponent<NodeController>().Initialize(endingNode, children - 1);
         }
