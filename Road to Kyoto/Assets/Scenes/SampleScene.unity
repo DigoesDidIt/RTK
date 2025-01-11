@@ -22605,6 +22605,14 @@ PrefabInstance:
       propertyPath: children
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1957200060013617003, guid: 7d315448662478643b546abad50f5afd, type: 3}
+      propertyPath: end
+      value: 
+      objectReference: {fileID: 4520415160234848782, guid: 86c896d7f2fd85249a4a758afac37b9b, type: 3}
+    - target: {fileID: 1957200060013617003, guid: 7d315448662478643b546abad50f5afd, type: 3}
+      propertyPath: finalNode
+      value: 
+      objectReference: {fileID: 4520415160234848782, guid: 86c896d7f2fd85249a4a758afac37b9b, type: 3}
     - target: {fileID: 5508780187768796976, guid: 7d315448662478643b546abad50f5afd, type: 3}
       propertyPath: playerMovement
       value: 
