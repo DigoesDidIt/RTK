@@ -5,14 +5,16 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     public BoxCollider2D collider;
-    public PlayerMovement playerMovement;
-    public Animator playerAnimator;
+    private PlayerMovement playerMovement;
+    private Animator playerAnimator;
     bool isOpen = false;
     public ParticleSystem particleSystem;
     
     // Start is called before the first frame update
     void Start()
     {
+        playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        playerAnimator = GameObject.Find("Player").GetComponent<Animator>();
         collider.offset = new Vector2(1.36f,0f);
         collider.size = new Vector2(0.25f,3f);
     }
