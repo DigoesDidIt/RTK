@@ -18,7 +18,7 @@ public class StaminaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxStamina = 5f;
+        maxStamina = 8f;
         stamina = maxStamina;
         visualStamina = maxStamina;
         regen = 0.015f;

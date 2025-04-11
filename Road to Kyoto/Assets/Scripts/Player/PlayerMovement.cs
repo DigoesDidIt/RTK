@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float topspeed = 75f;
     public float currentspeed;
-    public float accel = .4f;
+    public float accel = .8f;
     public float factor = 0.0012f;
     private bool movingopposite;
     private bool directioniszero;

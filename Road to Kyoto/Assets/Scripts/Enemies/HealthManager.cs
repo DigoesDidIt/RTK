@@ -64,7 +64,7 @@ public class HealthManager : MonoBehaviour
                 Invul = true;
                 StartCoroutine(InvulFrames());
             }
-            else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && blocking && !parry && !perfectParry)
+            else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && blocking && !parry && !perfectParry && weapon.getBlockable())
             {
                 staminaManager.UseStamina(.5f);
                 hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Blocked");
