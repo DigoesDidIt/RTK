@@ -92,6 +92,9 @@ GameObject:
   m_Component:
   - component: {fileID: 875741982061019170}
   - component: {fileID: 3431927683476810567}
+  - component: {fileID: 3002512670792294033}
+  - component: {fileID: 6018263889907696724}
+  - component: {fileID: 2845019128740336388}
   m_Layer: 0
   m_Name: Gate3
   m_TagString: Untagged
@@ -153,7 +156,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: dcf6f90b0faa2f048a2987fe7a8daa07, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5454ad515c8c2154a95e3986b58a1930, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -164,6 +167,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3002512670792294033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283414300513874707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SpriteLibraryAsset: {fileID: 11400000, guid: c8cd641d2c12e7544b9d55918d78ab5e, type: 2}
+--- !u!114 &6018263889907696724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283414300513874707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 1.980289e-24
+  m_labelHash: -0.0000014881505
+--- !u!114 &2845019128740336388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283414300513874707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb85699b3fb6c7840bad4bdd9d72dae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1164514833890972834
 GameObject:
   m_ObjectHideFlags: 0
