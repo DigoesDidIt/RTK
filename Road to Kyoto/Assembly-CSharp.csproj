@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\Enemies\EnemySpriteManager.cs" />
      <Compile Include="Assets\Scripts\Dummy\DummyController.cs" />
      <Compile Include="Assets\MenuCameraController.cs" />
+     <Compile Include="Assets\GateManager.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\IconManager.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
@@ -77,7 +78,6 @@
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Enemies\RangedWeapon.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyHealthManager.cs" />
-     <Compile Include="Assets\GateManager.cs" />
      <None Include="Assets\Bolt\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
      <None Include="Assets\Bolt\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Engine.xml" />
      <None Include="Assets\Bolt\Ludiq\Assemblies\Bolt.State.Runtime.xml" />

@@ -41,6 +41,14 @@ public class DoorController : MonoBehaviour
             isOpen = true;
             particleSystem.Play();
         }
+        else if(other.gameObject.tag == "Enemy" && isOpen == false)
+        {
+            collider.offset = new Vector2(1.36f,1f);
+            collider.size = new Vector2(0.25f,1f);
+            isOpen = true;
+            playerAnimator.SetTrigger("OpenDoor");
+            StartCoroutine(DoorDelay());
+        }
     }
     private void onTriggerEnter2D(Collider2D trigger)
     {
