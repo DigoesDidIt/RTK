@@ -20,6 +20,7 @@ public class AttackManager : MonoBehaviour
     private GradientAlphaKey[] solidToTransparent = { new GradientAlphaKey(1, 0), new GradientAlphaKey(0, 1) };
     private GradientColorKey[] blackToWhite = { new GradientColorKey(Color.black, 0), new GradientColorKey(Color.white, 1) };
     private IEnumerator chargedelay;
+    public bool canAttack = true;
 
     // Start is called before the first frame update
     void LightAttack()
@@ -102,26 +103,26 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyUp("j"))
+        if(Input.GetKeyUp("j") && canAttack)
         {
             attackQueue.Add("j");
         }
-        if (Input.GetKeyDown("k") && staminaManager.stamina != 0)
+        if (Input.GetKeyDown("k") && staminaManager.stamina != 0 && canAttack)
         {
             IsChargingSpecial = false;
             IsSpecialReady = false;
             chargedelay = ChargeDelay();
             StartCoroutine(chargedelay);
         }
-        if (Input.GetKeyUp("k") && !IsChargingSpecial)
+        if (Input.GetKeyUp("k") && !IsChargingSpecial && canAttack)
         {
             attackQueue.Add("k");
         }
-        if(Input.GetKeyUp("k") && IsSpecialReady && staminaManager.UseStamina(2.5f))
+        if(Input.GetKeyUp("k") && IsSpecialReady && staminaManager.UseStamina(2.5f ) && canAttack)
         {
             SpecialAttack();
         }
-        if((Input.GetKeyUp("k") && IsChargingSpecial && !IsSpecialReady)||(Input.GetKeyUp("k") && IsSpecialReady && !staminaManager.UseStamina(2.5f)))
+        if((Input.GetKeyUp("k") && IsChargingSpecial && !IsSpecialReady)||(Input.GetKeyUp("k") && IsSpecialReady && !staminaManager.UseStamina(2.5f)) && canAttack)
         {
             animator.SetBool("ChargingSp", false);
             IsChargingSpecial = false;
