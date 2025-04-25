@@ -11,8 +11,7 @@ public class PauseManager : MonoBehaviour
     public bool paused = false;
     public Button resume;
     public Button quit;
-    public Button menu
-        ;
+    public Button menu;
     public Light2D globalLight;
     public PlayerMovement playerMovement;
     public AttackManager attackManager;
