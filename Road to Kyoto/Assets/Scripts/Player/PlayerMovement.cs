@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Movement(float direction)
     {
-        print(direction);
+        //print(direction);
         if(!attacking && canMove)
         {
             currentspeed += direction * accel;
@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 headHeight = new Vector2(transform.position.x+.5f,transform.position.y+1.5f);
         RaycastHit2D combatCheckRight = Physics2D.Raycast(headHeight, Vector2.right, 6f, LayerMask.GetMask("Enemy"));
         RaycastHit2D combatCheckLeft = Physics2D.Raycast(headHeight, Vector2.left, 6f, LayerMask.GetMask("Enemy"));
-        Debug.DrawRay(headHeight, Vector2.right, Color.cyan, 6f);
+        //Debug.DrawRay(headHeight, Vector2.right, Color.cyan, 6f);
         if(combatCheckRight.collider != null && (combatCheckRight.collider.tag == "Enemy" || combatCheckRight.collider.tag == "Heavy Attack" || combatCheckRight.collider.tag == "Light Attack"))
         {
             EnemiesRight = true;
@@ -155,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             inCombat = false;
-            Debug.Log("No One");
+            //Debug.Log("No One");
         }
         animator.SetBool("InCombat", inCombat);
 

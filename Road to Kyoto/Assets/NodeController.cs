@@ -15,7 +15,7 @@ public class NodeController : MonoBehaviour
         if(isStarter)
         {
             var nodes = Resources.LoadAll("Nodes/General", typeof(GameObject));
-            Debug.Log(nodes);
+            //Debug.Log(nodes);
             var nextNode = (GameObject) nodes[Random.Range(0,nodes.Length)];
 
             //var nextNode = Resources.Load("Nodes/General/Clearing") as GameObject;
@@ -44,7 +44,7 @@ public class NodeController : MonoBehaviour
             else
             {
                 var nodes = Resources.LoadAll("Nodes/General", typeof(GameObject));
-                Debug.Log(nodes);
+                //Debug.Log(nodes);
                 var nextNode = (GameObject)nodes[Random.Range(0, nodes.Length)];
 
                 GameObject nodeObj = Instantiate(nextNode, transform.position, Quaternion.identity);

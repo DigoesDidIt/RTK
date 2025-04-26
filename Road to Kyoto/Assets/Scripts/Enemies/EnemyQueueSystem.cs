@@ -18,14 +18,17 @@ public class EnemyQueueSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Ememies: " + combatants.Count);
+        //Debug.Log("Ememies: " + combatants.Count);
     }
     void FixedUpdate()
     {
         if(!MapActive(combatants).Contains(true))
         {
             int i = UnityEngine.Random.Range(0,combatants.Count);
-            combatants[i].setActive(true); 
+            if(combatants.Count>0)
+            {
+                combatants[i].setActive(true); 
+            }
             setHoverDistances();
         }
     }
