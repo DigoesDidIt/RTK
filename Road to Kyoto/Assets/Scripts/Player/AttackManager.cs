@@ -203,6 +203,7 @@ public class AttackManager : MonoBehaviour
     }
     IEnumerator ChargeDelay()
     {
+        attacking = true;
         yield return new WaitForSeconds(.20f);
         if(Input.GetKey("k"))
         {
