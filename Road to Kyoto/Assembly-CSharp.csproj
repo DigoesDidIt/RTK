@@ -65,12 +65,15 @@
      <Compile Include="Assets\Scripts\Enemies\EnemyBehaviorManager.cs" />
      <Compile Include="Assets\Scripts\Enviroment\Door\DoorController.cs" />
      <Compile Include="Assets\Scripts\Enviroment\ForegroundManager.cs" />
+     <Compile Include="Assets\EnemyDifficultyManager.cs" />
      <Compile Include="Assets\DeathMenuManager.cs" />
      <Compile Include="Assets\MenuManager.cs" />
+     <Compile Include="Assets\DifficultyButtonManager.cs" />
      <Compile Include="Assets\PauseManager.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyQueueSystem.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemySpriteManager.cs" />
      <Compile Include="Assets\Scripts\Dummy\DummyController.cs" />
+     <Compile Include="Assets\VariableManager.cs" />
      <Compile Include="Assets\MenuCameraController.cs" />
      <Compile Include="Assets\GateManager.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />

@@ -11,7 +11,7 @@ public class Enemy
     private bool activated = false;
     private float hoverDist = 4;
     private Weapon weapon;
-    public Enemy(string type, int tier)
+    public Enemy(string type, int tier, int difficulty)
     {
         this.enemyType = type;
         this.enemyTier = tier;
@@ -21,12 +21,12 @@ public class Enemy
                 weapon = new Weapon();
                 if(tier == 1)
                 {
-                    enemyHealth = 3;
+                    enemyHealth = 3 - (difficulty == 1? 1:0);
                     enemyBlock = 4;
                 }
                 else if(tier == 2)
                 {
-                    enemyHealth = 4;
+                    enemyHealth = 4 - (difficulty == 1? 1:0);
                     enemyBlock = 6;
                 }
                 break;
@@ -34,12 +34,12 @@ public class Enemy
                 weapon = new Weapon(1f, 2.25f, false, false);
                 if(tier == 1)
                 {
-                    enemyHealth = 3;
+                    enemyHealth = 3 - (difficulty == 1? 1:0);
                     enemyBlock = 0;
                 }
                 else if(tier == 2)
                 {
-                    enemyHealth = 4;
+                    enemyHealth = 4 - (difficulty == 1? 1:0);
                     enemyBlock = 0;
                 }
                 break;                

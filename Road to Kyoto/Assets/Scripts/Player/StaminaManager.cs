@@ -21,7 +21,7 @@ public class StaminaManager : MonoBehaviour
         maxStamina = 8f;
         stamina = maxStamina;
         visualStamina = maxStamina;
-        regen = 0.015f;
+        regen = 0.03f;
         delay = 3;
         canRegenTiredStamina = false;
         canRegenStamina = true;
@@ -32,7 +32,7 @@ public class StaminaManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
         stamina = Mathf.Max(stamina, 0);

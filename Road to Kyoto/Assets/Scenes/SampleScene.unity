@@ -12641,6 +12641,7 @@ MonoBehaviour:
   staminaManager: {fileID: 1487687803}
   animator: {fileID: 1487687800}
   hurtbox: {fileID: 427971051}
+  attacking: 0
   previousAttack: 
   IsBlocking: 0
   attackQueue: []
@@ -18133,6 +18134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1892189179}
   - component: {fileID: 1892189178}
+  - component: {fileID: 1892189180}
   m_Layer: 0
   m_Name: Enemy Controller
   m_TagString: Untagged
@@ -18166,6 +18168,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1892189180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892189177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed3f2256bba28b840bd93b67e4126d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 1
 --- !u!1 &1954895967
 GameObject:
   m_ObjectHideFlags: 0

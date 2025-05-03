@@ -6,6 +6,7 @@ using Ludiq;
 
 public class EnemyBehaviorManager : MonoBehaviour
 {
+    public EnemyDifficultyManager edm;
     private Enemy self;
     public string type;
     public int tier;
@@ -15,7 +16,18 @@ public class EnemyBehaviorManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        self = new Enemy(type,tier);
+        GameObject vars = GameObject.Find("Variables");
+        int difficulty;
+        if(vars != null)
+        {
+            difficulty = vars.GetComponent<VariableManager>().getDifficulty();
+        }
+        else
+        {
+            difficulty = 2;
+            Debug.Log("Initiated scene without loading menu.");
+        }
+        self = new Enemy(type,tier, difficulty);
         GetComponent<EnemyHealthManager>().setHealth(self.getHealth());
         GetComponent<EnemyHealthManager>().setBlock(self.getBlock());
         Variables.Object(gameObject).Set("Tier", tier);

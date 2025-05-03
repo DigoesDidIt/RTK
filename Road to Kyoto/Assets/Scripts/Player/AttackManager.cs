@@ -8,7 +8,7 @@ public class AttackManager : MonoBehaviour
     public StaminaManager staminaManager;
     public Animator animator;
     public GameObject hurtbox;
-    private bool attacking = false;
+    public bool attacking = false;
     public string previousAttack;
     public bool IsBlocking;
     public List<string> attackQueue;
@@ -132,6 +132,10 @@ public class AttackManager : MonoBehaviour
             StopCoroutine(chargedelay);
             
         }
+        if(IsChargingSpecial)
+        {
+            attacking = true;
+        }
         
         
         if(attackQueue.Count > 0)
@@ -203,7 +207,7 @@ public class AttackManager : MonoBehaviour
     }
     IEnumerator ChargeDelay()
     {
-        attacking = true;
+        //playerMovement.canMove = false;
         yield return new WaitForSeconds(.20f);
         if(Input.GetKey("k"))
         {
@@ -222,6 +226,7 @@ public class AttackManager : MonoBehaviour
             }
             
         }
+        
         
     }
     IEnumerator SpecialDelay()
