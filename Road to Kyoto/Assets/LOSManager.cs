@@ -29,7 +29,7 @@ public class LOSManager : MonoBehaviour
         float direction = transform.localScale.x;
         Vector2 headHeight = new Vector2(transform.position.x+.5f*direction,transform.position.y+1.5f);
         RaycastHit2D hit = Physics2D.Raycast(headHeight, Vector2.right*direction, 10);
-        //Debug.DrawRay(headHeight, Vector2.left, Color.red, 10f);
+        Debug.DrawRay(headHeight, Vector2.left*10, Color.red, 10f);
         if(hit.collider != null)
         {
             if(hit.collider.tag == "Player")
@@ -58,5 +58,9 @@ public class LOSManager : MonoBehaviour
             eque.setHoverDistances();
         }
 
+    }
+    public void ForceAgro()
+    {
+        Variables.Object(gameObject).Set("Can See Player", true);
     }
 }

@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Player\AttackManager.cs" />
      <Compile Include="Assets\Scripts\Enemies\Weapon.cs" />
+     <Compile Include="Assets\ArenaManager.cs" />
      <Compile Include="Assets\Scripts\Player\StaminaManager.cs" />
      <Compile Include="Assets\Scripts\Player\ForegroundDetectionManager.cs" />
      <Compile Include="Assets\NodeController.cs" />
@@ -83,7 +84,6 @@
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Enemies\RangedWeapon.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyHealthManager.cs" />
-     <Compile Include="Assets\ArenaManager.cs" />
      <None Include="Assets\Bolt\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
      <None Include="Assets\Bolt\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Engine.xml" />
      <None Include="Assets\Bolt\Ludiq\Assemblies\Bolt.State.Runtime.xml" />

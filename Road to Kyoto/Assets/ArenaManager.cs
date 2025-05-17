@@ -8,7 +8,9 @@ public class ArenaManager : MonoBehaviour
     private bool playerInside = false;
     private GameObject boundaries;
     public EnemyHealthManager bossHealthManager;
+    public LOSManager bossLosManager;
     public Slider bossHealthSlider;
+    private bool cleared = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +22,12 @@ public class ArenaManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool inBossFight = playerInside && bossHealthManager.getHealth() != 0;
+        bool bossAlive = bossHealthManager.getHealth() != 0;
+        bool inBossFight = playerInside && bossAlive;
         boundaries.SetActive(inBossFight);
         if(inBossFight && !bossHealthSlider.gameObject.activeSelf)
         {
+            bossLosManager.ForceAgro();
             bossHealthSlider.gameObject.SetActive(true);
             bossHealthSlider.maxValue = bossHealthManager.getHealth();
             bossHealthSlider.value = bossHealthManager.getHealth();
@@ -32,7 +36,11 @@ public class ArenaManager : MonoBehaviour
         {
             bossHealthSlider.value = bossHealthManager.getHealth();
         }
-        else if(inBossFight && !bossHealthSlider.gameObject.activeSelf)
+        else if(playerInside && !cleared)
+        {
+            bossHealthSlider.value = bossHealthManager.getHealth();
+        }
+        else 
         {
             bossHealthSlider.gameObject.SetActive(false);
         }
@@ -49,6 +57,10 @@ public class ArenaManager : MonoBehaviour
         if(collider.gameObject.tag == "Player")
         {
             playerInside = false;
+            if(bossHealthManager.getHealth() == 0)
+            {
+                cleared = true;
+            }
         }
     }
 }

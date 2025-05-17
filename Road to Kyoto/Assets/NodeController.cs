@@ -6,21 +6,30 @@ public class NodeController : MonoBehaviour
 {
     public GameObject startingNode;
     public GameObject endingNode;
-    public int children;
+    //public int children;
     public bool isStarter;
-    public GameObject finalNode;
+    //public GameObject finalNode;
+    public List<GameObject> nodeList;
     // Start is called before the first frame update
     void Start()
     {
         if(isStarter)
         {
-            var nodes = Resources.LoadAll("Nodes/General", typeof(GameObject));
-            //Debug.Log(nodes);
-            var nextNode = (GameObject) nodes[Random.Range(0,nodes.Length)];
-
+            GameObject nextNode;
+            if(!nodeList[0])
+            {
+                var nodes = Resources.LoadAll("Nodes/General", typeof(GameObject));
+                //Debug.Log(nodes);
+                nextNode = (GameObject) nodes[Random.Range(0,nodes.Length)];
+            }
+            else
+            {
+                nextNode = nodeList[0];
+            }
             //var nextNode = Resources.Load("Nodes/General/Clearing") as GameObject;
             GameObject nodeObj = Instantiate(nextNode, transform.position, Quaternion.identity);
-            nodeObj.GetComponent<NodeController>().Initialize(endingNode, children - 1, finalNode);
+            nodeList.RemoveAt(0);
+            nodeObj.GetComponent<NodeController>().Initialize(endingNode, nodeList);
         }
     }
 
@@ -29,27 +38,26 @@ public class NodeController : MonoBehaviour
     {
         
     }
-    public void Initialize(GameObject end, int c, GameObject fnode)
+    public void Initialize(GameObject end, List<GameObject> ns)
     {
-        children = c;
-        finalNode = fnode;
+        nodeList = ns;
         transform.position = transform.position + end.transform.position - startingNode.transform.position;
-        if(children > 0)
+        if(nodeList.Count > 0)
         {
-            if (children == 1 && finalNode != null)
-            {
-                GameObject nodeObj = Instantiate(finalNode, transform.position, Quaternion.identity);
-                nodeObj.GetComponent<NodeController>().Initialize(endingNode, children - 1, finalNode);
-            }
-            else
+            GameObject nextNode;
+            if(!nodeList[0])
             {
                 var nodes = Resources.LoadAll("Nodes/General", typeof(GameObject));
                 //Debug.Log(nodes);
-                var nextNode = (GameObject)nodes[Random.Range(0, nodes.Length)];
-
-                GameObject nodeObj = Instantiate(nextNode, transform.position, Quaternion.identity);
-                nodeObj.GetComponent<NodeController>().Initialize(endingNode, children - 1, finalNode);
+                nextNode = (GameObject) nodes[Random.Range(0,nodes.Length)];
             }
+            else
+            {
+                nextNode = nodeList[0];
+            }
+            GameObject nodeObj = Instantiate(nextNode, transform.position, Quaternion.identity);
+            nodeList.RemoveAt(0);
+            nodeObj.GetComponent<NodeController>().Initialize(endingNode, nodeList);
         }
 
 
