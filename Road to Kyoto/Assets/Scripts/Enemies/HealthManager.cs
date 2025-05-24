@@ -7,6 +7,7 @@ using Ludiq;
 public class HealthManager : MonoBehaviour
 {
     public float health;
+    private float maxHealth;
     public AttackManager attackManager;
     public StaminaManager staminaManager;
     public PlayerMovement playermovement;
@@ -20,6 +21,7 @@ public class HealthManager : MonoBehaviour
     void Start()
     {
         health = 5;
+        maxHealth = health;
     }
 
     // Update is called once per frame
@@ -127,5 +129,13 @@ public class HealthManager : MonoBehaviour
     public int getHealth()
     {
         return (int)health;
+    }
+    public void changeHealth(int i)
+    {
+        health += i;
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
     }
 }
