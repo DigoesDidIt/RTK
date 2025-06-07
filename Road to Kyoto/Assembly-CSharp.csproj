@@ -70,6 +70,7 @@
      <Compile Include="Assets\DeathMenuManager.cs" />
      <Compile Include="Assets\MenuManager.cs" />
      <Compile Include="Assets\DifficultyButtonManager.cs" />
+     <Compile Include="Assets\ShrineManager.cs" />
      <Compile Include="Assets\PauseManager.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyQueueSystem.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemySpriteManager.cs" />
@@ -84,7 +85,6 @@
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Enemies\RangedWeapon.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyHealthManager.cs" />
-     <Compile Include="Assets\ShrineManager.cs" />
      <None Include="Assets\Bolt\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
      <None Include="Assets\Bolt\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Engine.xml" />
      <None Include="Assets\Bolt\Ludiq\Assemblies\Bolt.State.Runtime.xml" />
