@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 7b74b0a1c1d52421290ad29dd1d5addb
 ScriptedImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2765329128415232938
+    second: SwordEnemyNovice_0
   externalObjects: {}
   serializedVersion: 2
   userData: 
@@ -4731,6 +4734,28 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -856, y: 1476}
+  - name: SwordEnemyNovice_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1639
+      y: 2615
+      width: 252
+      height: 460
+    spriteID: 65cf4cd1fc39f99d0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1639, y: 2615}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}

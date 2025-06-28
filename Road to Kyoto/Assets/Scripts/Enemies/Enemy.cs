@@ -42,7 +42,12 @@ public class Enemy
                     enemyHealth = 4 - (difficulty == 1? 1:0);
                     enemyBlock = 0;
                 }
-                break;                
+                break;   
+            case "Boss":
+                weapon = new Weapon();
+                enemyHealth = 12 - (difficulty == 1? 2:0);
+                enemyBlock = 8;
+                break;       
             default: //unemployed
                 enemyHealth = 1;
                 enemyBlock = 0;
