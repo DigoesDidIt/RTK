@@ -16,6 +16,6 @@ public class AnchorDistanceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Variables.Object(gameObject).Set("Distance To Anchor", transform.position.x - anchor.transform.position.x);
+        Variables.Object(gameObject).Set("Distance to Anchor", transform.position.x - anchor.transform.position.x);
     }
 }
