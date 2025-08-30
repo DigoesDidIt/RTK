@@ -60,7 +60,7 @@ public class HealthManager : MonoBehaviour
                 Invul = true;
                 StartCoroutine(InvulFrames());
             }
-            else if (hurtbox.gameObject.tag == "Special Attack" && Invul == false && !parry)
+            else if (hurtbox.gameObject.tag == "Special Attack" && Invul == false && !parry && !perfectParry)
             {
                 health -= weapon.getDamage();
                 Invul = true;
@@ -76,7 +76,7 @@ public class HealthManager : MonoBehaviour
                     attackManager.IsBlocking = false;
                 }
             }
-            else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && perfectParry)
+            else if((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack") && perfectParry)
             {
                 staminaManager.UseStamina(-2f);
                 hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Stunned");
@@ -87,7 +87,7 @@ public class HealthManager : MonoBehaviour
                 cameraController.freeze = true;
                 StartCoroutine(PerfectParry());
             }
-            else if ((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack") && parry)
+            else if ((hurtbox.gameObject.tag == "Light Attack" || hurtbox.gameObject.tag == "Heavy Attack" || hurtbox.gameObject.tag == "Special Attack") && parry)
             {
                 hurtbox.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Stunned");
                 attackManager.animator.SetBool("Parry", true);
